@@ -1,0 +1,885 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ikbel Hamdi · Portfolio</title>
+<meta name="description" content="Portfolio d'Ikbel Hamdi : développement logiciel, Data Science & IA, DevOps/MLOps. Étudiante ingénieure à ESPRIT, à la recherche d'un stage PFE de 6 mois dès janvier 2027.">
+<link rel="canonical" href="https://portfoliov2-lovat-nine-63.vercel.app/">
+<meta property="og:url" content="https://portfoliov2-lovat-nine-63.vercel.app/">
+<meta property="og:title" content="Ikbel Hamdi · Portfolio">
+<meta property="og:description" content="Software Engineering · Data & AI · DevOps">
+<meta property="og:image" content="assets/profile.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2309101f'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='700' font-size='30' text-anchor='middle' fill='%232EC4B6'%3EIH%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#090e1a; --bg2:#0f1d33; --panel:rgba(255,255,255,.045); --panel2:rgba(255,255,255,.07);
+  --line:rgba(255,255,255,.10); --accent:#2EC4B6; --accent2:#7fe3d8; --txt:#e6eef5; --mut:#96aabe;
+  --radius:18px; --maxw:1140px;
+  --ff:Lato,"Segoe UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:var(--ff);background:var(--bg);color:var(--txt);line-height:1.6;overflow-x:hidden;
+  background-image:radial-gradient(1200px 600px at 85% -10%,rgba(46,196,182,.10),transparent 60%),radial-gradient(900px 500px at -10% 40%,rgba(31,56,100,.45),transparent 60%);
+  background-attachment:fixed}
+a{color:inherit;text-decoration:none}
+img,svg{max-width:100%;display:block}
+button{font-family:inherit}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+section{padding:96px 0;position:relative}
+.eyebrow{color:var(--accent);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--accent);border-radius:2px}
+h2{font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:900;line-height:1.15;margin-bottom:14px}
+.lead{color:var(--mut);max-width:680px;font-size:1.05rem}
+.sec-head{margin-bottom:34px}
+
+/* nav */
+nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:.3s}
+nav.solid{background:rgba(9,14,26,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.logo{font-weight:900;font-size:1.15rem;letter-spacing:.02em}
+.logo b{color:var(--accent)}
+.links{display:flex;gap:26px;align-items:center}
+.links a.l{color:var(--mut);font-weight:700;font-size:.92rem;transition:.2s;position:relative}
+.links a.l:hover,.links a.l.on{color:#fff}
+.links a.l.on::after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:2px;background:var(--accent);border-radius:2px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:999px;font-weight:700;font-size:.92rem;border:1.5px solid var(--accent);color:#fff;transition:.25s;cursor:pointer;background:transparent;font-family:inherit}
+.btn:hover{background:rgba(46,196,182,.14);transform:translateY(-2px)}
+.btn.fill{background:var(--accent);color:#06222a}
+.btn.fill:hover{background:var(--accent2);box-shadow:0 10px 30px -10px var(--accent)}
+.btn.sm{padding:7px 16px;font-size:.85rem}
+.lang{display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden}
+.lang button{background:none;border:0;color:var(--mut);font:700 .8rem var(--ff);padding:6px 12px;cursor:pointer;transition:.2s}
+.lang button.on{background:var(--accent);color:#06222a}
+.burger{display:none;background:none;border:0;color:#fff;font-size:1.6rem;cursor:pointer}
+
+/* hero */
+#hero{min-height:100vh;display:flex;align-items:center;padding:110px 0 70px;overflow:hidden}
+#net{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:10px;padding:7px 16px;border:1px solid rgba(46,196,182,.45);border-radius:999px;background:rgba(46,196,182,.08);color:var(--accent2);font-weight:700;font-size:.85rem;margin-bottom:22px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 rgba(46,196,182,.7);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(46,196,182,0)}100%{box-shadow:0 0 0 0 rgba(46,196,182,0)}}
+h1{font-size:clamp(2.6rem,6.4vw,4.8rem);font-weight:900;line-height:1.02;letter-spacing:-.01em;text-transform:uppercase}
+.role{font-size:clamp(1.15rem,2.4vw,1.6rem);color:var(--accent);font-weight:400;margin:14px 0 20px;min-height:1.9em}
+.caret{display:inline-block;width:2px;height:1.1em;background:var(--accent);margin-left:3px;vertical-align:-3px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.bio{color:var(--mut);font-size:1.08rem;max-width:600px;margin-bottom:30px}
+.bio b{color:#fff;font-weight:700}
+.cta{display:flex;flex-wrap:wrap;gap:14px}
+.photo{position:relative;width:min(340px,80%);aspect-ratio:1;margin:0 auto}
+.photo::before{content:"";position:absolute;inset:-14px;border-radius:50%;background:conic-gradient(from 0deg,var(--accent),transparent 35%,var(--accent2) 60%,transparent 85%,var(--accent));animation:spin 9s linear infinite}
+.photo::after{content:"";position:absolute;inset:-4px;border-radius:50%;background:var(--bg)}
+.photo img{position:relative;z-index:2;width:100%;height:100%;object-fit:cover;border-radius:50%;border:4px solid var(--bg)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.float{position:absolute;z-index:3;background:rgba(15,29,51,.92);border:1px solid rgba(46,196,182,.4);color:#fff;font-weight:700;font-size:.78rem;padding:7px 13px;border-radius:999px;backdrop-filter:blur(8px);animation:bob 5s ease-in-out infinite}
+.f1{top:6%;right:-6%}.f2{bottom:22%;left:-10%;animation-delay:-1.5s}.f3{bottom:2%;right:2%;animation-delay:-3s}
+@keyframes bob{50%{transform:translateY(-10px)}}
+.scroll{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:1;color:var(--mut);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll i{width:1.5px;height:34px;background:linear-gradient(var(--accent),transparent);animation:drop 1.8s infinite}
+@keyframes drop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:26px 22px;text-align:center}
+.stat b{display:block;font-size:2.5rem;font-weight:900;color:var(--accent);line-height:1}
+.stat span{color:var(--mut);font-size:.92rem}
+
+/* cards / chips */
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:26px;transition:.3s}
+.chip{display:inline-block;font-size:.76rem;font-weight:700;padding:4px 11px;border-radius:999px;background:rgba(46,196,182,.10);border:1px solid rgba(46,196,182,.28);color:var(--accent2);margin:3px 5px 3px 0}
+
+/* projects toolbar */
+.toolbar{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;margin-bottom:18px}
+.viewsw{display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden}
+.viewsw button{background:none;border:0;color:var(--mut);font:700 .84rem var(--ff);padding:8px 18px;cursor:pointer;transition:.2s}
+.viewsw button.on{background:var(--accent);color:#06222a}
+.legend{display:flex;flex-wrap:wrap;gap:16px;color:var(--mut);font-size:.82rem}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.legend i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.techs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.tech{background:var(--panel);border:1px solid var(--line);color:var(--mut);padding:6px 14px;border-radius:999px;font:700 .8rem var(--ff);cursor:pointer;transition:.2s}
+.tech:hover{color:#fff;border-color:rgba(46,196,182,.6)}
+.tech.on{background:var(--accent);color:#06222a;border-color:var(--accent)}
+.tech small{opacity:.65;font-weight:700;margin-left:4px}
+.hint{color:var(--mut);font-size:.85rem;margin-bottom:12px}
+
+/* constellation */
+.constel{position:relative;height:600px;border:1px solid var(--line);border-radius:24px;background:radial-gradient(700px 360px at 50% 40%,rgba(46,196,182,.07),transparent 70%),rgba(15,29,51,.35);overflow:hidden}
+#cv{position:absolute;inset:0;width:100%;height:100%;cursor:default;touch-action:manipulation}
+.tip{position:absolute;pointer-events:none;z-index:5;max-width:280px;padding:12px 14px;border-radius:14px;background:rgba(9,14,26,.96);border:1px solid rgba(46,196,182,.5);box-shadow:0 18px 40px -16px #000;opacity:0;transform:translateY(6px);transition:opacity .15s,transform .15s}
+.tip.show{opacity:1;transform:none}
+.tip b{display:block;font-size:.98rem;line-height:1.25;margin-bottom:3px}
+.tip p{color:var(--mut);font-size:.84rem;line-height:1.4;margin-bottom:6px}
+.tip em{color:var(--accent);font-style:normal;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+
+/* grid view */
+.pgrid{display:none;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
+.pcard{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:.3s;display:flex;flex-direction:column;text-align:left;color:inherit;padding:0}
+.pcard:hover,.pcard:focus-visible{border-color:rgba(46,196,182,.6);transform:translateY(-5px);background:var(--panel2);outline:none}
+.pcard.dim{opacity:.22}
+.cov{position:relative;aspect-ratio:16/8;overflow:hidden;background:#0a1224}
+.cov svg{width:100%;height:100%;transition:transform .6s}
+.pcard:hover .cov svg{transform:scale(1.06)}
+.cov .status{position:absolute;top:12px;right:12px}
+.pb{padding:18px 20px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.pb h3{font-size:1.1rem;line-height:1.25}
+.pb p{color:var(--mut);font-size:.92rem;flex:1}
+.open{color:var(--accent);font-weight:700;font-size:.82rem;margin-top:6px}
+.status{font-size:.68rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;white-space:nowrap;backdrop-filter:blur(6px)}
+.st-wip{background:rgba(250,204,21,.16);color:#fde68a;border:1px solid rgba(250,204,21,.45)}
+.st-top{background:rgba(46,196,182,.18);color:var(--accent2);border:1px solid rgba(46,196,182,.45)}
+.st-team{background:rgba(9,14,26,.6);color:#cfe0ee;border:1px solid var(--line)}
+.st-star{background:var(--accent);color:#06222a;border:1px solid var(--accent)}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
+.skills h3{font-size:1.02rem;margin-bottom:12px;color:#fff;display:flex;align-items:center;gap:10px}
+.skills h3 i{width:9px;height:9px;border-radius:50%;background:var(--accent);display:inline-block}
+
+/* timeline */
+.tl{position:relative;padding-left:30px;border-left:2px solid var(--line);display:grid;gap:26px}
+.tl .item{position:relative}
+.tl .item::before{content:"";position:absolute;left:-39px;top:30px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.item h3{font-size:1.15rem}
+.item .meta{color:var(--accent2);font-weight:700;font-size:.9rem;margin:2px 0 10px}
+.item li{color:var(--mut)}
+.item ul{padding-left:18px;display:grid;gap:4px;margin-bottom:10px}
+
+/* education */
+.edu{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
+.edu h3{font-size:1.05rem;margin-bottom:10px}
+.edu ul{list-style:none;display:grid;gap:12px}
+.edu li{color:var(--mut)}
+.edu li b{color:#fff;display:block}
+
+/* contact */
+#contact .box{text-align:center;border:1px solid rgba(46,196,182,.35);border-radius:26px;padding:clamp(30px,5vw,60px);background:radial-gradient(600px 260px at 50% 0%,rgba(46,196,182,.14),transparent 70%),rgba(15,29,51,.55)}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:34px 0 8px;text-align:left}
+.cgrid a{display:block;padding:16px 18px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.04);transition:.25s}
+.cgrid a:hover{border-color:var(--accent);transform:translateY(-3px)}
+.cgrid small{display:block;color:var(--accent);font-weight:900;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase}
+.cgrid span{font-weight:700;word-break:break-all}
+.note{color:var(--mut);font-size:.82rem;font-style:italic}
+footer{padding:34px 0 46px;text-align:center;color:var(--mut);font-size:.88rem;border-top:1px solid var(--line)}
+
+/* project sheet: same template for every project */
+#pm{position:fixed;inset:0;z-index:90;display:none;align-items:flex-start;justify-content:center;background:rgba(3,6,14,.86);backdrop-filter:blur(6px);overflow-y:auto;padding:4vh 16px}
+#pm.open{display:flex}
+.sheet{position:relative;width:min(980px,100%);background:linear-gradient(180deg,#0f1d33,#0a1224 60%);border:1px solid rgba(46,196,182,.35);border-radius:26px;overflow:hidden;animation:rise .35s both;box-shadow:0 40px 100px -30px #000}
+@keyframes rise{from{opacity:0;transform:translateY(30px) scale(.98)}}
+.sx{position:absolute;top:16px;right:16px;z-index:5;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:rgba(9,14,26,.7);color:#fff;font-size:1.1rem;cursor:pointer;backdrop-filter:blur(6px)}
+.sx:hover{background:var(--accent);color:#06222a}
+.shead{position:relative;height:250px}
+.shead>svg{position:absolute;inset:0;width:100%;height:100%}
+.shead::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 30%,#0f1d33)}
+.shead .in{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:0 clamp(20px,4vw,40px) 22px}
+.shead h3{font-size:clamp(1.6rem,3.6vw,2.5rem);font-weight:900;line-height:1.1;margin:8px 0 4px}
+.shead p{color:#cfe0ee;max-width:640px}
+.sbody{padding:10px clamp(20px,4vw,40px) 34px;display:grid;gap:30px}
+.s3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.s3>div{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:16px;padding:18px}
+.s3 small{display:block;color:var(--accent);font-weight:900;letter-spacing:.12em;font-size:.7rem;text-transform:uppercase;margin-bottom:6px}
+.s3 p{color:var(--txt);font-size:.95rem;line-height:1.5}
+.mt{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.mt div{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}
+.mt b{display:block;font-size:1.7rem;font-weight:900;color:var(--accent);line-height:1.1}
+.mt span{font-size:.82rem;color:var(--mut);line-height:1.3;display:block;margin-top:4px}
+.stitle{color:var(--accent);font-weight:900;letter-spacing:.14em;font-size:.74rem;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.stitle::before{content:"";width:22px;height:2px;background:var(--accent)}
+.flow{display:flex;flex-wrap:wrap;gap:12px}
+.flow div{position:relative;flex:1 1 150px;min-width:140px;background:rgba(255,255,255,.045);border:1px solid var(--line);border-radius:14px;padding:12px 14px 12px 48px;font-weight:700;font-size:.9rem;line-height:1.3;display:flex;align-items:center}
+.flow div::before{content:attr(data-n);position:absolute;left:12px;top:50%;transform:translateY(-50%);width:26px;height:26px;border-radius:50%;background:var(--accent);color:#06222a;font-weight:900;font-size:.8rem;display:grid;place-items:center}
+.sgal{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.sgal:has(.pt){grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}
+.sgal .pt{aspect-ratio:9/16}
+.xstrip{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.xstrip .shot{width:150px;aspect-ratio:16/10}
+.shot{border-radius:14px;overflow:hidden;border:1px solid var(--line);cursor:zoom-in;position:relative;background:#050912;aspect-ratio:16/10}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:top left;transition:transform .5s}
+.shot.r img{object-position:100% 0}
+.shot.pt{background:#0a1224}.shot.pt .cap{font-size:.68rem;padding:20px 8px 6px;line-height:1.25}.shot.pt img{object-fit:contain;object-position:center}
+.shot:hover img{transform:scale(1.05)}
+.shot .cap{position:absolute;left:0;right:0;bottom:0;padding:26px 12px 9px;background:linear-gradient(transparent,rgba(5,9,18,.92));font-size:.78rem;font-weight:700;color:#fff}
+.sfoot{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.sfoot .who{color:var(--mut);font-size:.9rem}
+.snav{display:grid;grid-template-columns:1fr 1fr;gap:12px;border-top:1px solid var(--line);padding-top:22px}
+.snav button{background:var(--panel);border:1px solid var(--line);border-radius:14px;color:#fff;padding:14px 18px;text-align:left;cursor:pointer;transition:.25s;font-size:.9rem}
+.snav button:hover{border-color:var(--accent);background:var(--panel2)}
+.snav small{display:block;color:var(--accent);font-weight:900;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase}
+.snav button:last-child{text-align:right}
+.disc{color:var(--mut);font-size:.82rem;font-style:italic}
+
+/* lightbox */
+#lb{position:fixed;inset:0;background:rgba(3,6,14,.95);z-index:120;display:none;align-items:center;justify-content:center;flex-direction:column;padding:30px;gap:14px}
+#lb.open{display:flex}
+#lb img{max-width:min(1300px,94vw);max-height:78vh;border-radius:12px;border:1px solid var(--line)}
+#lb p{color:#fff;font-weight:700;text-align:center;max-width:800px}
+#lb button{position:absolute;background:rgba(255,255,255,.1);border:1px solid var(--line);color:#fff;width:46px;height:46px;border-radius:50%;font-size:1.3rem;cursor:pointer}
+#lb button:hover{background:var(--accent);color:#06222a}
+#lb .x{top:22px;right:22px}#lb .pv{left:22px;top:50%}#lb .nx{right:22px;top:50%}
+
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:900px){
+  .hero-grid,.edu{grid-template-columns:1fr}
+  .photo{order:-1;width:min(240px,62%)}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .links{position:fixed;inset:68px 0 auto 0;background:rgba(9,14,26,.97);flex-direction:column;padding:22px;gap:18px;border-bottom:1px solid var(--line);transform:translateY(-130%);transition:.3s;z-index:-1}
+  .links.open{transform:none}
+  .burger{display:block}
+  section{padding:72px 0}
+  .scroll{display:none}
+  .s3{grid-template-columns:1fr}
+  .constel{height:480px}
+}
+@media (max-width:560px){.snav{grid-template-columns:1fr}.shead{height:210px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-in">
+    <a href="#hero" class="logo">Ikbel<b>.</b>Hamdi</a>
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
+    <div class="links" id="links">
+      <a class="l" href="#projects" data-i18n="n_proj"></a>
+      <a class="l" href="#skills" data-i18n="n_skills"></a>
+      <a class="l" href="#experience" data-i18n="n_exp"></a>
+      <a class="l" href="#education" data-i18n="n_edu"></a>
+      <div class="lang"><button data-l="fr" class="on">FR</button><button data-l="en">EN</button></div>
+      <a class="btn sm fill" id="cvbtn" href="assets/Ikbel_Hamdi_CV_FR.pdf" download data-i18n="n_cv"></a>
+    </div>
+  </div>
+</nav>
+
+<header id="hero">
+  <canvas id="net"></canvas>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="badge"><span class="dot"></span><span data-i18n="avail"></span></div>
+      <h1>Ikbel<br>Hamdi</h1>
+      <div class="role"><span id="role"></span><span class="caret"></span></div>
+      <p class="bio" data-i18n="bio"></p>
+      <div class="cta">
+        <a class="btn fill" href="#projects" data-i18n="cta1"></a>
+        <button class="btn" id="flagship" data-i18n="cta3"></button>
+        <a class="btn" href="#contact" data-i18n="cta2"></a>
+        <a class="btn" href="https://github.com/hamdikbell" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="btn" href="https://www.linkedin.com/in/ikbel-hamdi-706427286" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div class="photo">
+      <img src="assets/profile.jpg" alt="Ikbel Hamdi" width="640" height="640">
+      <span class="float f1">Full-Stack</span>
+      <span class="float f2">AI &amp; GenAI Agents</span>
+      <span class="float f3">DevOps · MLOps</span>
+    </div>
+  </div>
+  <div class="scroll"><span data-i18n="scroll"></span><i></i></div>
+</header>
+
+<section style="padding:30px 0 40px">
+  <div class="wrap stats rv">
+    <div class="stat"><b id="cProj" data-count="0">0</b><span data-i18n="s1"></span></div>
+    <div class="stat"><b data-count="2">0</b><span data-i18n="s2"></span></div>
+    <div class="stat"><b data-count="99" data-suffix="%">0</b><span data-i18n="s3"></span></div>
+    <div class="stat"><b>Top 10</b><span data-i18n="s4"></span></div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head rv"><div class="eyebrow" data-i18n="p_eye"></div><h2 data-i18n="p_h"></h2><p class="lead" data-i18n="p_lead"></p></div>
+    <div class="toolbar">
+      <div class="viewsw" id="viewsw"><button data-v="map" class="on" data-i18n="v_map"></button><button data-v="grid" data-i18n="v_grid"></button></div>
+      <div class="legend" id="legend"></div>
+    </div>
+    <div class="techs" id="techs"></div>
+    <p class="hint" id="hint"></p>
+    <div class="constel" id="constel">
+      <canvas id="cv"></canvas>
+      <div class="tip" id="tip"></div>
+    </div>
+    <div class="pgrid" id="pgrid"></div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head rv"><div class="eyebrow" data-i18n="k_eye"></div><h2 data-i18n="k_h"></h2><p class="lead" data-i18n="k_lead"></p></div>
+    <div class="skills" id="skillgrid"></div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head rv"><div class="eyebrow" data-i18n="e_eye"></div><h2 data-i18n="e_h"></h2></div>
+    <div class="tl" id="tl"></div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="sec-head rv"><div class="eyebrow" data-i18n="d_eye"></div><h2 data-i18n="d_h"></h2></div>
+    <div class="edu">
+      <div class="card rv">
+        <h3 data-i18n="d1"></h3>
+        <ul>
+          <li><b>ESPRIT · <span data-i18n="d_deg"></span></b><span>2022 – 2027 · <span data-i18n="d_fy"></span></span></li>
+          <li><b data-i18n="d_bac"></b><span>2022</span></li>
+        </ul>
+        <h3 style="margin-top:22px" data-i18n="d2"></h3>
+        <ul>
+          <li><b>NVIDIA DLI</b><span data-i18n="d_nv"></span></li>
+          <li><b>MASSAI Summer School (2025)</b><span data-i18n="d_ma"></span></li>
+          <li><b>365 Data Science</b><span>SQL (2025)</span></li>
+        </ul>
+      </div>
+      <div class="card rv">
+        <h3 data-i18n="d3"></h3>
+        <ul>
+          <li><b data-i18n="l_ar"></b><span data-i18n="l_ar2"></span></li>
+          <li><b data-i18n="l_fr"></b><span>C1</span></li>
+          <li><b data-i18n="l_en"></b><span>C1</span></li>
+          <li><b data-i18n="l_tr"></b><span>A2</span></li>
+        </ul>
+        <h3 style="margin-top:22px" data-i18n="d4"></h3>
+        <p class="lead" style="font-size:.95rem" data-i18n="d_award"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="box rv">
+      <div class="eyebrow" style="justify-content:center" data-i18n="c_eye"></div>
+      <h2 data-i18n="c_h"></h2>
+      <p class="lead" style="margin:0 auto" data-i18n="c_lead"></p>
+      <div class="cgrid">
+        <a href="mailto:hamdikbel2@gmail.com"><small>Email</small><span>hamdikbel2@gmail.com</span></a>
+        <a href="tel:+21650483892"><small data-i18n="c_tel"></small><span>+216 50 483 892</span></a>
+        <a href="https://www.linkedin.com/in/ikbel-hamdi-706427286" target="_blank" rel="noopener"><small>LinkedIn</small><span>ikbel-hamdi-706427286</span></a>
+        <a href="https://github.com/hamdikbell" target="_blank" rel="noopener"><small>GitHub</small><span>github.com/hamdikbell</span></a>
+      </div>
+      <div class="cta" style="justify-content:center;margin-top:26px">
+        <a class="btn fill" href="mailto:hamdikbel2@gmail.com" data-i18n="c_btn"></a>
+        <a class="btn" id="cvbtn2" href="assets/Ikbel_Hamdi_CV_FR.pdf" download data-i18n="n_cv"></a>
+      </div>
+      <p class="note" style="margin-top:20px" data-i18n="c_loc"></p>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">© 2026 Ikbel Hamdi · <span data-i18n="foot"></span></div></footer>
+
+<div id="pm" role="dialog" aria-modal="true" aria-label="Project"></div>
+
+<div id="lb" role="dialog" aria-modal="true">
+  <button class="x" aria-label="Close">✕</button><button class="pv" aria-label="Previous">‹</button><button class="nx" aria-label="Next">›</button>
+  <img alt=""><p></p>
+</div>
+
+<script>
+/* =====================================================================
+   DATA: every project uses exactly the same fields, so every project
+   gets the same detail sheet. To add screenshots to any project, put the
+   images in /assets and list them in its `shots` array, for example:
+   shots:[["my-image",0,"caption_key"]]  (see bcmid below)
+   ===================================================================== */
+const GH = "https://github.com/hamdikbell/";
+const GROUPS = {
+  ai:  {c:"#2EC4B6", bg:["#0c3340","#0b1a30"], fr:"IA & Data Science", en:"AI & Data Science"},
+  web: {c:"#6FA8FF", bg:["#16305f","#0b1a30"], fr:"Web · Desktop · Mobile", en:"Web · Desktop · Mobile"},
+  bi:  {c:"#F5B94C", bg:["#3a2a10","#14172a"], fr:"Data & BI", en:"Data & BI"},
+  emb: {c:"#A78BFA", bg:["#2a1f4d","#0b1a30"], fr:"Embarqué & Optimisation", en:"Embedded & Optimization"}
+};
+const TECHS = ["Deep Learning","Computer Vision","LLM & RAG","ML","Automation","API","Streamlit","Web","Desktop","Mobile","Embedded","BI & Data","Optimization"];
+const TECH_LABEL = {fr:{"Automation":"Automatisation","Embedded":"Embarqué","Optimization":"Optimisation"},en:{}};
+
+const P = [
+{id:"bcmid",grp:"ai",sn:"BCMID",star:true,st:"team",gh:"bcmid-multimodal-medical-ai",vid:"https://lnkd.in/p/efvg8DGs",
+ tech:["Deep Learning","Computer Vision","LLM & RAG","Automation","API"],
+ t:{fr:"BCMID — Diagnostic du cancer du sein",en:"BCMID — Breast Cancer Diagnosis"},
+ tag:{fr:"Aide au diagnostic du cancer du sein par IA multimodale et explicable.",en:"Multimodal, explainable AI for breast cancer diagnosis support."},
+ problem:{fr:"La mammographie seule manque de sensibilité sur les seins denses et génère des faux positifs. Les IA « boîte noire » sont peu adoptées en clinique.",en:"Mammography alone lacks sensitivity on dense breasts and produces false positives. Black-box AI is rarely adopted in clinical practice."},
+ solution:{fr:"Pipeline mammographie + échographie (ResNet-18), cartes Grad-CAM, RAG sur les lignes directrices ACR BI-RADS, agent de sécurité et triage automatisé avec n8n.",en:"Mammography + ultrasound pipeline (ResNet-18), Grad-CAM maps, RAG on ACR BI-RADS guidelines, a safety agent and automated triage with n8n."},
+ result:{fr:"La fusion atteint une AUC de 0,82 (mammographie 0,79, échographie 0,67). Triage urgent / surveillance / routine, rapport PDF et e-mail au radiologue.",en:"Fusion reaches an AUC of 0.82 (mammography 0.79, ultrasound 0.67). Urgent / surveillance / routine triage, PDF report and e-mail to the radiologist."},
+ metrics:[["0.82",{fr:"AUC de la fusion multimodale",en:"AUC of the multimodal fusion"}],["83.1%",{fr:"sensibilité de la fusion",en:"fusion sensitivity"}],["87.4%",{fr:"de l'activation Grad-CAM dans le parenchyme",en:"of Grad-CAM activation inside parenchyma"}],["0",{fr:"fuite de données (split par patiente)",en:"data leakage (patient-level split)"}]],
+ flow:[{fr:"Données & qualité (pseudonymisation, CLAHE)",en:"Data & quality (pseudonymization, CLAHE)"},{fr:"Vision multimodale + Grad-CAM",en:"Multimodal vision + Grad-CAM"},{fr:"RAG clinique ACR BI-RADS",en:"Clinical RAG ACR BI-RADS"},{fr:"Raisonnement LLM",en:"LLM reasoning"},{fr:"Agent de sécurité",en:"Safety agent"},{fr:"Rapport médical PDF / JSON",en:"Medical report PDF / JSON"},{fr:"Orchestration n8n + e-mail",en:"n8n orchestration + e-mail"}],
+ tools:["PyTorch","ResNet-18","Grad-CAM","FAISS","sentence-transformers","Qwen2.5-3B","FastAPI","n8n","ReportLab","pytest"],
+ who:{fr:"Projet d'équipe (4) · ESPRIT",en:"Team project (4) · ESPRIT"},
+ note:{fr:"Projet académique de recherche : non certifié pour un usage diagnostique autonome. Chaque rapport exige la validation d'un radiologue. Les identifiants affichés sont pseudonymisés.",en:"Academic research project: not certified for autonomous diagnostic use. Every report requires radiologist validation. Displayed identifiers are pseudonymized."},
+ shots:[["bcmid-dashboard",0,"c0"],["bcmid-gradcam",0,"c1"],["bcmid-biopsy",0,"c2"],["bcmid-surveillance",1,"c3"],["bcmid-normal",1,"c4"],["bcmid-email",0,"c5"],["bcmid-n8n",0,"c6"]]},
+
+{id:"agrivai",grp:"ai",sn:"AgriVAI",vids:[["▶ Démo","▶ Demo","https://lnkd.in/p/e66ZuwfZ"],["▶ Vidéo commerciale","▶ Commercial video","https://lnkd.in/p/eGtzRkuQ"]],st:"team",
+ tech:["ML","Deep Learning","Computer Vision","LLM & RAG","Mobile"],
+ t:{fr:"AgriVAI",en:"AgriVAI"},
+ tag:{fr:"Plateforme d'agriculture de précision pilotée par l'IA.",en:"AI-driven precision agriculture platform."},
+ problem:{fr:"Aider les agriculteurs à décider grâce aux données : irrigation, fertilisation, choix des cultures, santé des plantes et du bétail.",en:"Help farmers decide with data: irrigation, fertilization, crop choice, plant and livestock health."},
+ solution:{fr:"Six modules d'IA (IoT, ML, DL) et un assistant LLM, accessibles depuis une application mobile en français, anglais et arabe.",en:"Six AI modules (IoT, ML, DL) and an LLM assistant, available from a mobile app in French, English and Arabic."},
+ result:{fr:"Meilleur modèle par module : LightGBM 88 % (irrigation), CatBoost R² 0,99 (fertilisation), Random Forest 96 % (cultures), MobileNetV2 96 % (maladies), EfficientNetB0 93 % (bétail).",en:"Best model per module: LightGBM 88% (irrigation), CatBoost R² 0.99 (fertilization), Random Forest 96% (crops), MobileNetV2 96% (diseases), EfficientNetB0 93% (livestock)."},
+ metrics:[["6",{fr:"modules d'IA",en:"AI modules"}],["96%",{fr:"cultures et maladies",en:"crops and diseases"}],["0.99",{fr:"R² (fertilisation)",en:"R² (fertilization)"}],["3",{fr:"langues (FR / EN / AR)",en:"languages (FR / EN / AR)"}]],
+ flow:[{fr:"Capteurs IoT & données",en:"IoT sensors & data"},{fr:"Modèles ML / DL (6 modules)",en:"ML / DL models (6 modules)"},{fr:"Assistant LLM",en:"LLM assistant"},{fr:"Application mobile FR / EN / AR",en:"Mobile app FR / EN / AR"}],
+ tools:["LightGBM","CatBoost","Random Forest","MobileNetV2","EfficientNetB0","LLM (Grok)","IoT"],
+ who:{fr:"Cheffe de projet · projet d'équipe",en:"Project lead · team project"},shots:[["agrivai-01", 2, {"fr": "Détection de maladies du bétail", "en": "Cattle disease detection"}], ["agrivai-02", 2, {"fr": "Création de compte", "en": "Account creation"}], ["agrivai-03", 2, {"fr": "Recommandation de cultures", "en": "Crop recommendation"}], ["agrivai-04", 2, {"fr": "Prédiction de rendement (fertilisation)", "en": "Fertilizer and yield prediction"}], ["agrivai-05", 2, {"fr": "Qualité des fruits", "en": "Fruit quality analysis"}], ["agrivai-06", 2, {"fr": "Historique des analyses", "en": "Analysis history"}], ["agrivai-07", 2, {"fr": "Gestion de l'irrigation", "en": "Irrigation management"}], ["agrivai-08", 2, {"fr": "Irrigation : données capteurs IoT", "en": "Irrigation: IoT sensor data"}], ["agrivai-09", 2, {"fr": "Santé du bétail et production laitière", "en": "Livestock health and milk yield"}], ["agrivai-10", 2, {"fr": "Accueil : modules d'IA", "en": "Home: AI modules"}], ["agrivai-11", 2, {"fr": "Détection de maladies des plantes", "en": "Plant disease detection"}], ["agrivai-12", 2, {"fr": "Profil et animaux", "en": "Profile and animals"}], ["agrivai-13", 2, {"fr": "Tendances de santé", "en": "Health trends"}], ["agrivai-14", 2, {"fr": "Paramètres : thème et langues", "en": "Settings: theme and languages"}], ["agrivai-15", 2, {"fr": "Écran de connexion", "en": "Login screen"}]]},
+
+{id:"optirh",grp:"web",sn:"OptiRH",st:"team",gh:"OptiRH",
+ tech:["Web","Desktop"],
+ t:{fr:"OptiRH — Gestion RH",en:"OptiRH — HR Management"},
+ tag:{fr:"Gestion RH centralisée, en web et en desktop.",en:"Centralized HR management, on web and desktop."},
+ problem:{fr:"Simplifier, automatiser et centraliser la gestion des ressources humaines, de la PME au grand groupe.",en:"Simplify, automate and centralize human resources management, from SMEs to large companies."},
+ solution:{fr:"Une plateforme Symfony (web) et une application JavaFX (desktop) avec six modules : utilisateurs et rôles, offres et demandes, événements, réclamations, transport, missions.",en:"A Symfony web platform and a JavaFX desktop application with six modules: users and roles, offers and demands, events, complaints, transport, missions."},
+ result:{fr:"Un outil unique avec paiement Stripe, billets QR, SMS, carte, météo, descriptions d'événements générées par IA et analyse des réclamations par IA.",en:"One tool with Stripe payment, QR tickets, SMS, maps, weather, AI-generated event descriptions and AI complaint analysis."},
+ metrics:[["2",{fr:"plateformes (web + desktop)",en:"platforms (web + desktop)"}],["6",{fr:"modules métier",en:"business modules"}],["Stripe",{fr:"paiement des billets",en:"ticket payment"}],["IA",{fr:"descriptions et tickets",en:"descriptions and tickets"}]],
+ flow:[{fr:"Authentification & rôles",en:"Authentication & roles"},{fr:"Modules métier (6)",en:"Business modules (6)"},{fr:"Services : Stripe, SMS, carte, météo, IA",en:"Services: Stripe, SMS, maps, weather, AI"},{fr:"Web (Symfony) + Desktop (JavaFX)",en:"Web (Symfony) + Desktop (JavaFX)"}],
+ tools:["Symfony","JavaFX","MySQL","JWT / OAuth","Stripe","SMS","QR code","Symfony Workflow"],
+ who:{fr:"Projet d'équipe (Nexus Team)",en:"Team project (Nexus Team)"},shots:[["optirh-01", 0, {"fr": "Page d'accueil", "en": "Home page"}], ["optirh-02", 0, {"fr": "Événements à venir", "en": "Upcoming events"}], ["optirh-03", 0, {"fr": "Gestion des événements", "en": "Events management"}], ["optirh-04", 0, {"fr": "Description générée par IA", "en": "AI-generated description"}], ["optirh-05", 0, {"fr": "Paiement Stripe", "en": "Stripe payment"}], ["optirh-06", 0, {"fr": "Billet avec QR code", "en": "Ticket with QR code"}], ["optirh-07", 0, {"fr": "Détails de l'offre", "en": "Offer details"}], ["optirh-08", 0, {"fr": "Candidature", "en": "Application form"}], ["optirh-09", 0, {"fr": "Entretiens", "en": "Interviews"}], ["optirh-10", 0, {"fr": "Liste des réclamations", "en": "Complaints list"}], ["optirh-11", 0, {"fr": "Ajout de réclamation", "en": "Add a complaint"}], ["optirh-12", 0, {"fr": "Nouvelle réclamation", "en": "New complaint"}], ["optirh-13", 0, {"fr": "Tableau de bord des missions", "en": "Missions dashboard"}]]},
+
+{id:"azul",grp:"web",sn:"AzulTunes",vids:[["▶ Vidéo YouTube","▶ YouTube video","https://www.youtube.com/watch?v=vu_uBOs_uzM&t=2s"]],st:"top",gh:"Azul_Tunes",
+ tech:["Web","LLM & RAG"],
+ t:{fr:"AzulTunes",en:"AzulTunes"},
+ tag:{fr:"Plateforme web pour explorer la Tunisie : événements, offres, blogs et IA.",en:"Web platform to explore Tunisia: events, offers, blogs and AI."},
+ problem:{fr:"Promouvoir le tourisme en Tunisie avec une plateforme sécurisée, intelligente et interactive.",en:"Promote tourism in Tunisia with a secure, intelligent and interactive platform."},
+ solution:{fr:"Six modules (utilisateurs sécurisés, collaborations et contrats, événements, offres hôtels et restaurants avec recommandations et carte, blogs, réclamations) et un chatbot IA.",en:"Six modules (secure users, collaborations and contracts, events, hotel and restaurant offers with recommendations and map, blogs, complaints) and an AI chatbot."},
+ result:{fr:"Sélectionné parmi les 10 meilleurs projets d'ESPRIT (2024).",en:"Selected among the 10 best ESPRIT projects (2024)."},
+ metrics:[["Top 10",{fr:"meilleurs projets ESPRIT 2024",en:"best ESPRIT projects 2024"}],["6",{fr:"modules",en:"modules"}],["6",{fr:"membres dans l'équipe",en:"team members"}],["IA",{fr:"chatbot intégré",en:"built-in chatbot"}]],
+ flow:[{fr:"Utilisateur sécurisé (vérification e-mail)",en:"Secure user (e-mail verification)"},{fr:"Événements & offres",en:"Events & offers"},{fr:"Réservation : billet QR, SMS, e-mail",en:"Booking: QR ticket, SMS, e-mail"},{fr:"Chatbot IA d'assistance",en:"AI assistant chatbot"}],
+ tools:["HTML5","CSS3","JavaScript (ES6)","Chatbots IA","QR code","SMS","E-mail"],
+ who:{fr:"Projet d'équipe (AdInno Team, 6)",en:"Team project (AdInno Team, 6)"},shots:[["azul-01", 0, {"fr": "Accueil AzulTunes et chatbot IA", "en": "AzulTunes home and AI chatbot"}]]},
+
+{id:"bi",grp:"bi",sn:"BI multi-agents",st:"wip",
+ tech:["LLM & RAG","BI & Data","Automation"],
+ t:{fr:"Système BI multi-agents",en:"Multi-Agent BI System"},
+ tag:{fr:"Une chaîne BI automatisée par des agents spécialisés.",en:"A BI chain automated by specialized agents."},
+ problem:{fr:"Automatiser la chaîne BI à partir de sources de données multiples.",en:"Automate the BI chain from multiple data sources."},
+ solution:{fr:"Des agents spécialisés : nettoyage des données, data engineering, reporting BI et KPI.",en:"Specialized agents: data cleaning, data engineering, BI and KPI reporting."},
+ result:{fr:"Génération automatique de tableaux de bord à partir de ces sources (en cours de développement).",en:"Automatic dashboard generation from those sources (in development)."},
+ metrics:[["3",{fr:"agents spécialisés",en:"specialized agents"}],["+",{fr:"sources de données multiples",en:"multiple data sources"}]],
+ flow:[{fr:"Sources multiples",en:"Multiple sources"},{fr:"Agent de nettoyage",en:"Cleaning agent"},{fr:"Agent data engineering",en:"Data engineering agent"},{fr:"Agent reporting BI / KPI",en:"BI / KPI reporting agent"},{fr:"Tableaux de bord",en:"Dashboards"}],
+ tools:["Agents LLM","Data engineering","KPI","Dashboards"],
+ who:{fr:"Projet en cours",en:"Ongoing project"},shots:[]},
+
+{id:"assist",grp:"ai",sn:"Assistive Vision",st:"",gh:"Assist-Vision",
+ tech:["Computer Vision","Deep Learning","Streamlit"],
+ t:{fr:"Assistive Vision",en:"Assistive Vision"},
+ tag:{fr:"Un assistant temps réel pour piétons malvoyants.",en:"A real-time assistant for visually impaired pedestrians."},
+ problem:{fr:"Aider les personnes malvoyantes à se déplacer en sécurité et à comprendre leur environnement.",en:"Help visually impaired people move safely and understand their surroundings."},
+ solution:{fr:"Détection d'obstacles avec distance et position (YOLOv8n), lecture de panneaux (EasyOCR), description de la scène (BLIP) et retour vocal priorisé par niveau de danger.",en:"Obstacle detection with distance and position (YOLOv8n), sign reading (EasyOCR), scene description (BLIP) and voice feedback prioritized by danger level."},
+ result:{fr:"Un assistant qui fonctionne en temps réel dans le navigateur, avec alertes vocales.",en:"An assistant running in real time in the browser, with spoken alerts."},
+ metrics:[["3",{fr:"modèles combinés",en:"combined models"}],["Live",{fr:"traitement temps réel",en:"real-time processing"}],["Voix",{fr:"alertes parlées",en:"spoken alerts"}]],
+ flow:[{fr:"Caméra (WebRTC)",en:"Camera (WebRTC)"},{fr:"YOLOv8n : obstacles",en:"YOLOv8n: obstacles"},{fr:"EasyOCR : panneaux",en:"EasyOCR: signs"},{fr:"BLIP : description de scène",en:"BLIP: scene description"},{fr:"Alertes vocales priorisées",en:"Prioritized voice alerts"}],
+ tools:["YOLOv8","EasyOCR","BLIP","OpenCV","Streamlit","streamlit-webrtc"],
+ who:{fr:"Projet personnel",en:"Personal project"},shots:[]},
+
+{id:"sign",grp:"ai",sn:"Langue des signes",vids:[["▶ Démo vidéo","▶ Video demo","https://lnkd.in/p/esbfxy3v"]],st:"",gh:"sign-language-recognition",
+ tech:["Computer Vision","Deep Learning","Streamlit"],
+ t:{fr:"Reconnaissance de la langue des signes",en:"Sign Language Recognition"},
+ tag:{fr:"Traduction de signes en texte, en temps réel.",en:"Real-time sign-to-text translation."},
+ problem:{fr:"Traduire les signes de la main en texte pour faciliter la communication.",en:"Translate hand signs into text to ease communication."},
+ solution:{fr:"Reconnaissance statique de l'alphabet ASL (MLP) et dynamique de gestes (LSTM) à partir des points de la main détectés par MediaPipe, avec construction de mots et de phrases.",en:"Static ASL alphabet recognition (MLP) and dynamic gesture recognition (LSTM) from MediaPipe hand landmarks, with word and sentence building."},
+ result:{fr:"MLP à environ 99 % sur les lettres A–Z, LSTM à environ 75 % sur six mots.",en:"MLP at about 99% on letters A–Z, LSTM at about 75% on six words."},
+ metrics:[["99%",{fr:"précision lettres A–Z (MLP)",en:"letters A–Z accuracy (MLP)"}],["75%",{fr:"précision gestes (LSTM)",en:"gesture accuracy (LSTM)"}],["26",{fr:"lettres reconnues",en:"letters recognized"}],["6",{fr:"mots (hello, thank you, help...)",en:"words (hello, thank you, help...)"}]],
+ flow:[{fr:"Webcam",en:"Webcam"},{fr:"MediaPipe : points de la main",en:"MediaPipe: hand landmarks"},{fr:"MLP (lettres) / LSTM (gestes)",en:"MLP (letters) / LSTM (gestures)"},{fr:"Constructeur de mots et phrases",en:"Word and sentence builder"}],
+ tools:["MediaPipe","Scikit-learn","TensorFlow / Keras","OpenCV","Streamlit"],
+ who:{fr:"Projet personnel",en:"Personal project"},shots:[["sign-01", 0, {"fr": "Geste « please » (99,8 %)", "en": "Gesture “please” (99.8%)"}], ["sign-02", 0, {"fr": "Geste « no » détecté", "en": "Gesture “no” detected"}], ["sign-03", 0, {"fr": "Construction de phrase", "en": "Sentence building"}], ["sign-04", 0, {"fr": "Alphabet et gestes", "en": "Alphabet and gestures"}], ["sign-05", 0, {"fr": "Reconnaissance en temps réel", "en": "Real-time recognition"}]]},
+
+{id:"onco",grp:"ai",sn:"OncoRisk AI",gh:"OncoRiskAI",st:"",
+ tech:["ML","Deep Learning","Streamlit"],
+ t:{fr:"OncoRisk AI",en:"OncoRisk AI"},
+ tag:{fr:"Évaluation du risque et du stade du cancer avec recommandations.",en:"Cancer risk and stage assessment with recommendations."},
+ problem:{fr:"Détecter tôt, estimer le stade et le risque de progression du cancer, et orienter la prévention.",en:"Detect early, estimate cancer stage and progression risk, and guide prevention."},
+ solution:{fr:"Analyse des données patient et de l'imagerie médicale, moteur de recommandations personnalisées et chatbot interactif en application web.",en:"Patient data and medical imaging analysis, personalized recommendation engine and interactive chatbot in a web app."},
+ result:{fr:"8 modèles comparés : Softmax Regression 98 %, AdaBoost 98 %, et CNN pour le type de cancer.",en:"8 models compared: Softmax Regression 98%, AdaBoost 98%, and CNN for cancer type."},
+ metrics:[["8",{fr:"modèles comparés",en:"models compared"}],["98%",{fr:"meilleures précisions",en:"best accuracies"}],["CNN",{fr:"imagerie médicale",en:"medical imaging"}]],
+ flow:[{fr:"Données patient + imagerie",en:"Patient data + imaging"},{fr:"Prétraitement",en:"Preprocessing"},{fr:"Modèles : stade et risque",en:"Models: stage and risk"},{fr:"Recommandations personnalisées",en:"Personalized recommendations"},{fr:"Application web + chatbot",en:"Web app + chatbot"}],
+ tools:["TensorFlow / PyTorch","CNN","Scikit-learn","Streamlit","Chatbot"],
+ who:{fr:"Projet académique",en:"Academic project"},shots:[["oncorisk-01", 0, {"fr": "Accueil de l'outil", "en": "Tool home"}], ["oncorisk-02", 0, {"fr": "Questionnaire interactif", "en": "Interactive questionnaire"}], ["oncorisk-03", 0, {"fr": "Recommandations personnalisées", "en": "Personalized recommendations"}], ["oncorisk-04", 0, {"fr": "Analyse d'imagerie histologique", "en": "Histology image analysis"}], ["oncorisk-05", 0, {"fr": "Résultats de l'analyse d'image", "en": "Image analysis results"}], ["oncorisk-06", 0, {"fr": "Analyse d'imagerie : téléversement", "en": "Imaging analysis: upload"}], ["oncorisk-07", 0, {"fr": "Évaluation du risque", "en": "Risk assessment"}]]},
+
+{id:"fifa",grp:"bi",sn:"FIFA 2026",vids:[["▶ Démo vidéo","▶ Video demo","https://lnkd.in/p/edhJu5jM"]],st:"",gh:"Fifa-world-cup-2026-prediction",
+ tech:["ML","API","Streamlit"],
+ t:{fr:"Prédiction FIFA World Cup 2026",en:"FIFA World Cup 2026 Prediction"},
+ tag:{fr:"Prédire les scores et classements de la phase de groupes.",en:"Predict group-stage scores and standings."},
+ problem:{fr:"Estimer les résultats des matchs de groupes de la Coupe du monde 2026 et déterminer les équipes qualifiées.",en:"Estimate World Cup 2026 group-stage results and determine the qualified teams."},
+ solution:{fr:"Un Gradient Boosting Regressor entraîné sur les matchs internationaux depuis 2010, avec des variables de forme, buts, victoires, face-à-face et importance du tournoi.",en:"A Gradient Boosting Regressor trained on international matches since 2010, with form, goals, win rate, head-to-head and tournament importance features."},
+ result:{fr:"Un tableau de bord Streamlit avec classements, scores réels et prédits, et équipes qualifiées.",en:"A Streamlit dashboard with standings, real and predicted scores, and qualified teams."},
+ metrics:[["2010+",{fr:"données historiques",en:"historical data"}],["7",{fr:"variables clés",en:"key features"}],["3",{fr:"vues du tableau de bord",en:"dashboard views"}]],
+ flow:[{fr:"results.csv + API football-data.org",en:"results.csv + football-data.org API"},{fr:"Variables : forme, buts, face-à-face",en:"Features: form, goals, head-to-head"},{fr:"Gradient Boosting Regressor",en:"Gradient Boosting Regressor"},{fr:"Classements et qualifiés",en:"Standings and qualified teams"}],
+ tools:["Gradient Boosting","Scikit-learn","Pandas","Streamlit","football-data.org API"],
+ who:{fr:"Projet personnel",en:"Personal project"},shots:[["fifa-01", 0, {"fr": "Classements des groupes", "en": "Group standings"}], ["fifa-02", 0, {"fr": "Scores réels et prédits", "en": "Real and predicted scores"}], ["fifa-03", 0, {"fr": "Équipes qualifiées", "en": "Qualified teams"}]]},
+
+{id:"delivery",grp:"bi",sn:"Delivery ML",gh:"Ddelivery-Prediction-ML",st:"",
+ tech:["ML","BI & Data","Streamlit"],
+ t:{fr:"Delivery Prediction ML",en:"Delivery Prediction ML"},
+ tag:{fr:"Prédire la charge de livraison et optimiser les ressources.",en:"Predict delivery workload and optimize resources."},
+ problem:{fr:"Un leader de la logistique urbaine (150 000+ livreurs, 5 M de clients) doit fiabiliser ses estimations malgré des facteurs variables.",en:"An urban logistics leader (150,000+ couriers, 5M customers) needs reliable estimates despite variable factors."},
+ solution:{fr:"Trois tâches : régression de la charge de commandes, classification des commandes à forte valeur, et segmentation par clustering.",en:"Three tasks: order workload regression, high-value order classification, and segmentation by clustering."},
+ result:{fr:"Random Forest (MAE 6, RMSE 12), classification à 96 % et segments K-Means exploitables.",en:"Random Forest (MAE 6, RMSE 12), 96% classification and usable K-Means segments."},
+ metrics:[["150k+",{fr:"livreurs",en:"couriers"}],["96%",{fr:"précision de classification",en:"classification accuracy"}],["6",{fr:"MAE (régression RF)",en:"MAE (RF regression)"}],["3",{fr:"tâches ML",en:"ML tasks"}]],
+ flow:[{fr:"Prétraitement & variables",en:"Preprocessing & features"},{fr:"Régression : commandes en attente",en:"Regression: pending orders"},{fr:"Classification : valeur de commande",en:"Classification: order value"},{fr:"Clustering : segments",en:"Clustering: segments"}],
+ tools:["Scikit-learn","Random Forest","KNN","K-Means","Pandas","Streamlit"],
+ who:{fr:"Projet académique",en:"Academic project"},shots:[["delivery-01", 0, {"fr": "Clustering des zones de stress", "en": "Delivery stress zones clustering"}], ["delivery-02", 0, {"fr": "Régression : commandes en attente", "en": "Regression: pending orders"}], ["delivery-03", 0, {"fr": "Prédictions moyennes par heure", "en": "Average predictions by hour"}], ["delivery-04", 0, {"fr": "Classification des commandes à haute valeur (KNN)", "en": "High-value order classification (KNN)"}], ["delivery-05", 0, {"fr": "Statistiques par zone de stress", "en": "Statistics by stress zone"}], ["delivery-06", 0, {"fr": "Simulation de livraison", "en": "Delivery simulation"}], ["delivery-07", 0, {"fr": "Anomalies détectées", "en": "Detected anomalies"}]]},
+
+{id:"crm",grp:"bi",sn:"CRM Dashboard",st:"",
+ tech:["BI & Data"],
+ t:{fr:"Tableau de bord CRM",en:"CRM Dashboard"},
+ tag:{fr:"Un rapport Power BI pour piloter la relation client.",en:"A Power BI report to steer customer relationships."},
+ problem:{fr:"Suivre la relation client et les indicateurs commerciaux avec des vues claires.",en:"Track customer relationships and sales indicators with clear views."},
+ solution:{fr:"Un rapport Power BI interactif de quatre pages.",en:"An interactive four-page Power BI report."},
+ result:{fr:"Des tableaux de bord prêts à l'analyse pour la prise de décision.",en:"Analysis-ready dashboards to support decision-making."},
+ metrics:[["4",{fr:"pages de rapport",en:"report pages"}]],
+ flow:[{fr:"Données CRM",en:"CRM data"},{fr:"Modélisation",en:"Modeling"},{fr:"Mesures & KPI",en:"Measures & KPIs"},{fr:"Rapport Power BI",en:"Power BI report"}],
+ tools:["Power BI","DAX","Excel"],
+ who:{fr:"Projet académique",en:"Academic project"},shots:[["crm-01", 0, {"fr": "Vue d'ensemble : chiffre d'affaires et conversion", "en": "Overview: revenue and conversion"}], ["crm-02", 0, {"fr": "Tendances des ventes", "en": "Sales trends"}], ["crm-03", 0, {"fr": "Taux de conversion par produit", "en": "Conversion rate by product"}], ["crm-04", 0, {"fr": "Performance des équipes commerciales", "en": "Sales team performance"}]]},
+
+{id:"evrp",grp:"emb",sn:"2E-EVRP",st:"",gh:"Ant-colony-2e-evrp",
+ tech:["Optimization","Streamlit"],
+ t:{fr:"2E-EVRP · colonies de fourmis",en:"2E-EVRP · Ant Colony"},
+ tag:{fr:"Optimisation de tournées de véhicules électriques à deux échelons.",en:"Two-echelon electric vehicle routing optimization."},
+ problem:{fr:"Planifier des livraisons dépôt, satellites, clients avec véhicules électriques : batterie, recharge, capacité et fenêtres de temps.",en:"Plan depot, satellite and client deliveries with electric vehicles: battery, recharging, capacity and time windows."},
+ solution:{fr:"Un algorithme de colonies de fourmis (ACO) avec phéromones, gestion de la batterie, passage par les stations et pénalités de retard.",en:"An ant colony optimization (ACO) algorithm with pheromones, battery management, charging station visits and lateness penalties."},
+ result:{fr:"Une application Streamlit interactive : paramètres réglables, graphe des routes, batterie et charge à chaque visite.",en:"An interactive Streamlit app: tunable parameters, route graph, battery and load at every visit."},
+ metrics:[["2",{fr:"échelons de livraison",en:"delivery echelons"}],["100",{fr:"clients maximum par instance",en:"clients max per instance"}],["ACO",{fr:"métaheuristique",en:"metaheuristic"}]],
+ flow:[{fr:"Instance : dépôt, satellites, clients",en:"Instance: depot, satellites, clients"},{fr:"Colonie de fourmis (phéromones)",en:"Ant colony (pheromones)"},{fr:"Routes avec recharge",en:"Routes with recharging"},{fr:"Visualisation interactive",en:"Interactive visualization"}],
+ tools:["Python","ACO","Streamlit","streamlit-agraph","NumPy"],
+ who:{fr:"Projet académique",en:"Academic project"},shots:[["evrp-01", 0, {"fr": "Visualisation interactive des tournées", "en": "Interactive route visualization"}]]},
+
+{id:"gem",grp:"emb",sn:"GemTrack Pro",st:"team",
+ tech:["Desktop","Embedded"],
+ t:{fr:"GemTrack Pro",en:"GemTrack Pro"},
+ tag:{fr:"Application desktop de gestion de bijouterie avec Arduino.",en:"Jewelry shop management desktop app with Arduino."},
+ problem:{fr:"Gérer les opérations courantes d'une bijouterie avec une interface claire.",en:"Manage the daily operations of a jewelry shop with a clear interface."},
+ solution:{fr:"Une application C++/Qt avec cinq modules (utilisateurs, clients, fournisseurs, réclamations, bijoux) et une intégration Arduino.",en:"A C++/Qt application with five modules (users, clients, suppliers, complaints, jewelry) and Arduino integration."},
+ result:{fr:"Une solution desktop complète alliant interface graphique et système embarqué.",en:"A complete desktop solution combining a graphical interface and an embedded system."},
+ metrics:[["5",{fr:"modules métier",en:"business modules"}],["5",{fr:"membres dans l'équipe",en:"team members"}]],
+ flow:[{fr:"Interface Qt Designer",en:"Qt Designer interface"},{fr:"Modules : clients, fournisseurs, bijoux...",en:"Modules: clients, suppliers, jewelry..."},{fr:"Intégration Arduino",en:"Arduino integration"}],
+ tools:["C++","Qt","Qt Designer","Arduino"],
+ who:{fr:"Projet d'équipe (5)",en:"Team project (5)"},shots:[["gem-01", 0, {"fr": "Connexion", "en": "Login"}], ["gem-02", 0, {"fr": "Menu de gestion", "en": "Management menu"}], ["gem-03", 0, {"fr": "Catalogue des bijoux", "en": "Jewelry catalog"}], ["gem-04", 0, {"fr": "Envoi d'e-mail", "en": "Mailing"}], ["gem-05", 0, {"fr": "Statistiques des réclamations", "en": "Complaint statistics"}]]},
+
+{id:"yummy",grp:"web",sn:"Yummy Food",st:"",
+ tech:["Mobile"],
+ t:{fr:"Yummy Food",en:"Yummy Food"},
+ tag:{fr:"Application mobile de livraison de repas.",en:"Food delivery mobile application."},
+ problem:{fr:"Commander et se faire livrer des repas depuis son téléphone.",en:"Order and get meals delivered from a phone."},
+ solution:{fr:"Une application mobile développée avec Flutter et FlutterFlow.",en:"A mobile application built with Flutter and FlutterFlow."},
+ result:{fr:"Une base mobile multiplateforme prête à évoluer.",en:"A cross-platform mobile foundation ready to evolve."},
+ metrics:[["2",{fr:"outils : Flutter, FlutterFlow",en:"tools: Flutter, FlutterFlow"}]],
+ flow:[{fr:"Conception de l'interface (FlutterFlow)",en:"Interface design (FlutterFlow)"},{fr:"Application Flutter",en:"Flutter application"},{fr:"Commande de repas",en:"Meal ordering"}],
+ tools:["Flutter","FlutterFlow"],
+ who:{fr:"Projet mobile",en:"Mobile project"},shots:[["yummy-01", 2, {"fr": "Inscription", "en": "Sign-up"}], ["yummy-02", 2, {"fr": "Écran d'accueil", "en": "Welcome screen"}], ["yummy-03", 2, {"fr": "Liste des restaurants", "en": "Restaurant list"}], ["yummy-04", 2, {"fr": "Écrans de l'application", "en": "App screens"}]]},
+
+{id:"parking",grp:"emb",sn:"Parking intelligent",st:"",
+ tech:["Embedded"],
+ t:{fr:"Parking intelligent",en:"Smart Parking"},
+ tag:{fr:"Un système embarqué de gestion de parking.",en:"An embedded parking management system."},
+ problem:{fr:"Gérer automatiquement un parking avec un système embarqué.",en:"Manage a parking lot automatically with an embedded system."},
+ solution:{fr:"Un système basé sur le microcontrôleur PIC16F877.",en:"A system based on the PIC16F877 microcontroller."},
+ result:{fr:"Un prototype embarqué de parking intelligent.",en:"An embedded smart parking prototype."},
+ metrics:[["PIC",{fr:"microcontrôleur PIC16F877",en:"PIC16F877 microcontroller"}]],
+ flow:[{fr:"Capteurs",en:"Sensors"},{fr:"Microcontrôleur PIC16F877",en:"PIC16F877 microcontroller"},{fr:"Gestion du parking",en:"Parking management"}],
+ tools:["PIC16F877","C","Embarqué"],
+ who:{fr:"Projet embarqué",en:"Embedded project"},shots:[["micro-01", 0, {"fr": "Schéma du système (Proteus, PIC16F877)", "en": "System schematic (Proteus, PIC16F877)"}]]}
+];
+
+const T = {
+fr:{
+ n_proj:"Projets", n_skills:"Compétences", n_exp:"Expérience", n_edu:"Formation", n_cv:"Télécharger mon CV",
+ avail:"Disponible · stage PFE de 6 mois dès janvier 2027",
+ bio:"Ingénieure en dernière année à <b>ESPRIT</b>, je conçois des solutions numériques complètes et intelligentes : <b>développement logiciel</b>, <b>data science &amp; IA</b>, <b>analyse de données &amp; BI</b>, <b>DevOps &amp; MLOps</b>. Je transforme des besoins métier en produits concrets, de la donnée à la mise en production.",
+ cta1:"Explorer mes projets", cta2:"Me contacter", cta3:"★ Projet phare : BCMID", scroll:"Défiler",
+ s1:"projets réalisés", s2:"stages (IA générative, logiciel)", s3:"meilleure précision (langue des signes)", s4:"projets académiques ESPRIT 2024",
+ p_eye:"Réalisations", p_h:"Mes projets en constellation", p_lead:"Chaque point est un projet. Les liens montrent les technologies qu'ils partagent. Cliquez sur un point pour ouvrir sa fiche.",
+ v_map:"Constellation", v_grid:"Grille", filt_all:"Toutes les technologies",
+ hint_map:"Survolez un projet ou choisissez une technologie pour voir les liens.", hint_grid:"Cliquez sur une carte pour ouvrir la fiche du projet.",
+ open_sheet:"Ouvrir la fiche →", open_tip:"Cliquer pour ouvrir",
+ sh_problem:"Problème", sh_solution:"Solution", sh_result:"Résultat", sh_metrics:"Chiffres clés", sh_flow:"Architecture · pipeline", sh_tools:"Outils & technologies", sh_shots:"Aperçu de l'application",
+ sh_code:"Code sur GitHub ↗", sh_video:"▶ Démo vidéo ↗", sh_prev:"Projet précédent", sh_next:"Projet suivant", st_wip:"En cours", st_top:"Top 10 ESPRIT 2024", st_team:"Projet d'équipe", st_star:"★ Projet phare",
+ c0:"MammoScan AI · console clinique", c1:"Cartes Grad-CAM : mammographie et échographie (ResNet-18)", c2:"Cas BI-RADS 4A · biopsie recommandée", c3:"Cas BI-RADS 3 · surveillance à 6 mois", c4:"Cas BI-RADS 1 · dépistage de routine", c5:"E-mail d'alerte envoyé au radiologue avec le rapport PDF", c6:"Workflow n8n à 8 agents, exécutions réussies",
+ k_eye:"Stack technique", k_h:"Compétences", k_lead:"Un profil polyvalent, du développement logiciel à l'industrialisation de l'IA.",
+ e_eye:"Parcours", e_h:"Expérience professionnelle",
+ d_eye:"Parcours académique", d_h:"Formation, certifications &amp; langues", d1:"Formation", d2:"Certifications", d3:"Langues", d4:"Distinction", d_deg:"Diplôme d'ingénieur en Data Science & IA", d_fy:"dernière année", d_bac:"Baccalauréat, Sciences expérimentales",
+ d_nv:"Deep Learning, NLP, IA générative, applications LLM, détection d'anomalies", d_ma:"IA générative, LLMs & agents IA", d_award:"AzulTunes : Top 10 des meilleurs projets académiques, ESPRIT 2024.",
+ l_ar:"Arabe", l_ar2:"Langue maternelle", l_fr:"Français", l_en:"Anglais", l_tr:"Turc",
+ c_eye:"Contact", c_h:"Travaillons ensemble.", c_lead:"Je recherche un stage de fin d'études (PFE) de 6 mois à partir de janvier 2027 en développement logiciel, data science ou intelligence artificielle.", c_tel:"Téléphone", c_btn:"M'écrire un e-mail", c_loc:"Ariana, Tunisie",
+ foot:"Conçu et développé par Ikbel Hamdi", code:"Code ↗",
+ roles:["Ingénieure Data Science & IA","Développeuse Full-Stack","Ingénieure IA générative & agents","Ingénieure DevOps / MLOps"]
+},
+en:{
+ n_proj:"Projects", n_skills:"Skills", n_exp:"Experience", n_edu:"Education", n_cv:"Download my résumé",
+ avail:"Available · 6-month PFE internship from January 2027",
+ bio:"Final-year engineering student at <b>ESPRIT</b>, I design complete and intelligent digital solutions: <b>software development</b>, <b>data science &amp; AI</b>, <b>data analysis &amp; BI</b>, <b>DevOps &amp; MLOps</b>. I turn business needs into concrete products, from data to production.",
+ cta1:"Explore my projects", cta2:"Contact me", cta3:"★ Flagship: BCMID", scroll:"Scroll",
+ s1:"projects built", s2:"internships (GenAI, software)", s3:"best accuracy (sign language)", s4:"ESPRIT academic projects 2024",
+ p_eye:"Work", p_h:"My projects as a constellation", p_lead:"Each dot is a project. Links show the technologies they share. Click a dot to open its sheet.",
+ v_map:"Constellation", v_grid:"Grid", filt_all:"All technologies",
+ hint_map:"Hover a project or pick a technology to reveal the links.", hint_grid:"Click a card to open the project sheet.",
+ open_sheet:"Open sheet →", open_tip:"Click to open",
+ sh_problem:"Problem", sh_solution:"Solution", sh_result:"Result", sh_metrics:"Key figures", sh_flow:"Architecture · pipeline", sh_tools:"Tools & technologies", sh_shots:"Application preview",
+ sh_code:"Code on GitHub ↗", sh_video:"▶ Video demo ↗", sh_prev:"Previous project", sh_next:"Next project", st_wip:"Ongoing", st_top:"Top 10 ESPRIT 2024", st_team:"Team project", st_star:"★ Flagship",
+ c0:"MammoScan AI · clinical console", c1:"Grad-CAM maps: mammography and ultrasound (ResNet-18)", c2:"BI-RADS 4A case · biopsy recommended", c3:"BI-RADS 3 case · 6-month surveillance", c4:"BI-RADS 1 case · routine screening", c5:"Alert e-mail sent to the radiologist with the PDF report", c6:"8-agent n8n workflow, successful executions",
+ k_eye:"Tech stack", k_h:"Skills", k_lead:"A versatile profile, from software development to AI industrialization.",
+ e_eye:"Journey", e_h:"Professional experience",
+ d_eye:"Academic path", d_h:"Education, certifications &amp; languages", d1:"Education", d2:"Certifications", d3:"Languages", d4:"Award", d_deg:"Engineering Degree in Data Science & AI", d_fy:"final year", d_bac:"Baccalaureate, Experimental Sciences",
+ d_nv:"Deep Learning, NLP, Generative AI, LLM applications, anomaly detection", d_ma:"Generative AI, LLMs & AI agents", d_award:"AzulTunes: Top 10 Best Academic Projects, ESPRIT 2024.",
+ l_ar:"Arabic", l_ar2:"Native", l_fr:"French", l_en:"English", l_tr:"Turkish",
+ c_eye:"Contact", c_h:"Let's work together.", c_lead:"I am looking for a 6-month end-of-studies (PFE) internship starting in January 2027 in software engineering, data science or artificial intelligence.", c_tel:"Phone", c_btn:"Send me an e-mail", c_loc:"Ariana, Tunisia",
+ foot:"Designed and built by Ikbel Hamdi", code:"Code ↗",
+ roles:["Data Science & AI Engineer","Full-Stack Developer","GenAI & Agents Engineer","DevOps / MLOps Engineer"]
+}};
+
+const SKILLS = [
+ ["Software Development","Python · Java (JavaFX, Spring Boot) · C · C++ (Qt) · C#/.NET · PHP/Symfony · HTML/CSS/JavaScript · React · FastAPI · REST APIs · Streamlit · Arduino"],
+ ["Web, Mobile & Databases","Symfony · Flutter · FlutterFlow · JWT/OAuth · Stripe · MySQL · PostgreSQL · Oracle · MongoDB · SQL · ChromaDB · FAISS"],
+ ["GenAI & Agents","LLMs (Gemini, Ollama, Qwen) · RAG · LangChain · LangGraph · Hugging Face · BGE embeddings · Multi-agent systems · Prompt Engineering · Speech-to-text"],
+ ["ML / Deep Learning","Scikit-learn · XGBoost · LightGBM · CatBoost · Random Forest · SVM · ANN · RNN · LSTM · GRU · Transformers · PyTorch · TensorFlow/Keras · Time series (R, ARIMA)"],
+ ["Computer Vision","OpenCV · YOLOv8 · MediaPipe · MiDaS · MobileNetV2 · EfficientNet · ResNet18 · EasyOCR · BLIP · Grad-CAM (XAI)"],
+ ["MLOps & DevOps","CI/CD · Git/GitHub · MLOps · MLflow · n8n (workflow automation) · Testing (pytest)"],
+ ["Data & BI","Big Data · Apache Spark (PySpark) · Pandas · NumPy · Power BI · Excel · Plotly · Matplotlib · Seaborn"]
+];
+const EXP = {
+ fr:[{t:"Stagiaire Ingénieure IA — RAG & IA générative",o:"Sotetel (Télécom)",d:"Juin 2026 – Août 2026",gh:"telecom-rag-assistant",
+   li:["Assistant RAG pour la documentation technique télécom : extraction et structuration de PDF non structurés.","Recherche sémantique (LangChain, ChromaDB) et inférence LLM locale (Ollama : Llama 3, qwen2.5:3b).","Interface Streamlit : réponses sourcées, dictée et lecture vocales, historique des conversations, tableau de bord d'usage."],tags:["RAG","LangChain","ChromaDB","Ollama","Streamlit"],shots:[["sotetel-01",0,{fr:"Assistant RAG SOTETEL : accueil",en:"SOTETEL RAG assistant: home"}],["sotetel-02",0,{fr:"Réponse sourcée sur la documentation",en:"Sourced answer from the documentation"}],["sotetel-03",0,{fr:"Conversation avec l'assistant",en:"Chat with the assistant"}],["sotetel-04",0,{fr:"Tableau de bord d'usage",en:"Usage dashboard"}],["sotetel-05",0,{fr:"Historique des conversations",en:"Conversation history"}],["sotetel-06",0,{fr:"Profil collaborateur",en:"User profile"}],["sotetel-07",0,{fr:"Guide d'utilisation",en:"User guide"}],["sotetel-08",0,{fr:"Guide : sessions et sources",en:"Guide: sessions and sources"}]]},
+  {t:"Stagiaire Développeuse Logiciel & IA",o:"CTN Tunis",d:"1,5 mois",li:["Application web de gestion des réclamations : IA générative (Gemini), saisie vocale (voice-to-text), notifications e-mail et base de données Oracle."],tags:["Gemini","Oracle","Voice-to-text","E-mail"],shots:[["ctn-01",0,{fr:"Écran de connexion de l'application CTN",en:"CTN application login screen"}]]}],
+ en:[{t:"AI Engineer Intern — RAG & Generative AI",o:"Sotetel (Telecom)",d:"Jun 2026 – Aug 2026",gh:"telecom-rag-assistant",
+   li:["RAG assistant for telecom technical documentation: extraction and structuring of unstructured PDFs.","Semantic search (LangChain, ChromaDB) and local LLM inference (Ollama: Llama 3, qwen2.5:3b).","Streamlit interface: sourced answers, voice dictation and playback, chat history, usage dashboard."],tags:["RAG","LangChain","ChromaDB","Ollama","Streamlit"],shots:[["sotetel-01",0,{fr:"Assistant RAG SOTETEL : accueil",en:"SOTETEL RAG assistant: home"}],["sotetel-02",0,{fr:"Réponse sourcée sur la documentation",en:"Sourced answer from the documentation"}],["sotetel-03",0,{fr:"Conversation avec l'assistant",en:"Chat with the assistant"}],["sotetel-04",0,{fr:"Tableau de bord d'usage",en:"Usage dashboard"}],["sotetel-05",0,{fr:"Historique des conversations",en:"Conversation history"}],["sotetel-06",0,{fr:"Profil collaborateur",en:"User profile"}],["sotetel-07",0,{fr:"Guide d'utilisation",en:"User guide"}],["sotetel-08",0,{fr:"Guide : sessions et sources",en:"Guide: sessions and sources"}]]},
+  {t:"Software & AI Developer Intern",o:"CTN Tunis",d:"1.5 months",li:["Complaint management web app: generative AI (Gemini), voice-to-text input, e-mail notifications and Oracle database."],tags:["Gemini","Oracle","Voice-to-text","E-mail"],shots:[["ctn-01",0,{fr:"Écran de connexion de l'application CTN",en:"CTN application login screen"}]]}]
+};
+
+/* ===================================================================== */
+let lang = localStorage.getItem("lang") || ((navigator.language||"fr").startsWith("fr") ? "fr" : "en");
+let view = innerWidth > 900 ? "map" : "grid";
+let activeTech = null;
+const $ = (s,r=document)=>r.querySelector(s), $$ = (s,r=document)=>[...r.querySelectorAll(s)];
+const capOf = c => typeof c==="string" ? T[lang][c] : c[lang];
+const tl = k => (TECH_LABEL[lang][k] || k);
+
+/* deterministic random for generated covers */
+function rng(seed){ let h=2166136261; for(const c of seed) h=Math.imul(h^c.charCodeAt(0),16777619); return ()=>{ h+=0x6D2B79F5; let t=Math.imul(h^h>>>15,1|h); t^=t+Math.imul(t^t>>>7,61|t); return ((t^t>>>14)>>>0)/4294967296; }; }
+function cover(p){
+  const g=GROUPS[p.grp], r=rng(p.id), W=640,H=320, pts=[];
+  for(let i=0;i<30;i++) pts.push([r()*W,r()*H,1.5+r()*3.5]);
+  let lines="",dots="";
+  for(let i=0;i<pts.length;i++) for(let j=i+1;j<pts.length;j++){ const d=Math.hypot(pts[i][0]-pts[j][0],pts[i][1]-pts[j][1]); if(d<120) lines+=`<line x1="${pts[i][0].toFixed(0)}" y1="${pts[i][1].toFixed(0)}" x2="${pts[j][0].toFixed(0)}" y2="${pts[j][1].toFixed(0)}" stroke="${g.c}" stroke-opacity="${(.4*(1-d/120)).toFixed(2)}" />`; }
+  pts.forEach(q=>dots+=`<circle cx="${q[0].toFixed(0)}" cy="${q[1].toFixed(0)}" r="${q[2].toFixed(1)}" fill="${g.c}" fill-opacity=".75"/>`);
+  const mono = p.sn.replace(/[^A-Za-z0-9]/g,"").slice(0,2).toUpperCase();
+  return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="g${p.id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${g.bg[0]}"/><stop offset="1" stop-color="${g.bg[1]}"/></linearGradient><radialGradient id="r${p.id}" cx=".8" cy=".2" r=".7"><stop offset="0" stop-color="${g.c}" stop-opacity=".28"/><stop offset="1" stop-color="${g.c}" stop-opacity="0"/></radialGradient></defs><rect width="${W}" height="${H}" fill="url(#g${p.id})"/><rect width="${W}" height="${H}" fill="url(#r${p.id})"/>${lines}${dots}<text x="${W-24}" y="${H-26}" text-anchor="end" font-family="Lato,Segoe UI,sans-serif" font-weight="900" font-size="170" fill="${g.c}" fill-opacity=".14">${mono}</text></svg>`;
+}
+const statusPill = p => p.star ? `<span class="status st-star">${T[lang].st_star}</span>` : p.st==="wip" ? `<span class="status st-wip">${T[lang].st_wip}</span>` : p.st==="top" ? `<span class="status st-top">${T[lang].st_top}</span>` : p.st==="team" ? `<span class="status st-team">${T[lang].st_team}</span>` : "";
+const matches = p => !activeTech || p.tech.includes(activeTech);
+
+/* ---------- static render ---------- */
+function renderStatic(){
+  const d=T[lang]; document.documentElement.lang=lang;
+  $$("[data-i18n]").forEach(el=>{ const v=d[el.dataset.i18n]; if(v!==undefined) el.innerHTML=v; });
+  $$(".lang button").forEach(b=>b.classList.toggle("on",b.dataset.l===lang));
+  const cvf = lang==="fr" ? "assets/Ikbel_Hamdi_CV_FR.pdf" : "assets/Ikbel_Hamdi_Resume_EN.pdf";
+  $("#cvbtn").href=cvf; $("#cvbtn2").href=cvf;
+  $("#cProj").dataset.count=P.length;
+  renderToolbar(); renderGrid(); renderSkills(); renderExp(); setView(view,true);
+  if($("#pm").classList.contains("open")) renderSheet(curId);
+}
+function renderToolbar(){
+  const d=T[lang];
+  $("#legend").innerHTML = Object.values(GROUPS).map(g=>`<span><i style="background:${g.c}"></i>${g[lang]}</span>`).join("");
+  const counts={}; P.forEach(p=>p.tech.forEach(t=>counts[t]=(counts[t]||0)+1));
+  $("#techs").innerHTML = `<button class="tech ${!activeTech?"on":""}" data-t="">${d.filt_all}</button>` + TECHS.map(t=>`<button class="tech ${activeTech===t?"on":""}" data-t="${t}">${tl(t)}<small>${counts[t]||0}</small></button>`).join("");
+  $$("#viewsw button").forEach(b=>b.classList.toggle("on",b.dataset.v===view));
+  $("#hint").textContent = view==="map" ? d.hint_map : d.hint_grid;
+}
+function renderGrid(){
+  $("#pgrid").innerHTML = P.map(p=>`<button class="pcard ${matches(p)?"":"dim"}" data-id="${p.id}"><div class="cov">${cover(p)}${statusPill(p)}</div><div class="pb"><h3>${p.t[lang]}</h3><p>${p.tag[lang]}</p><div>${p.tech.slice(0,3).map(t=>`<span class="chip">${tl(t)}</span>`).join("")}</div><span class="open">${T[lang].open_sheet}</span></div></button>`).join("");
+}
+function renderSkills(){ $("#skillgrid").innerHTML = SKILLS.map(([g,it])=>`<div class="card"><h3><i></i>${g}</h3><div>${it.split(" · ").map(i=>`<span class="chip">${i}</span>`).join("")}</div></div>`).join(""); }
+function renderExp(){ const d=T[lang]; $("#tl").innerHTML = EXP[lang].map(e=>`<div class="card item"><h3>${e.t}</h3><div class="meta">${e.o} · ${e.d}</div><ul>${e.li.map(l=>`<li>${l}</li>`).join("")}</ul><div>${e.tags.map(t=>`<span class="chip">${t}</span>`).join("")}</div>${e.shots?`<div class="xstrip">${e.shots.slice(0,4).map((x,k)=>`<div class="shot" data-xe="${EXP[lang].indexOf(e)}" data-xi="${k}"><img src="assets/${x[0]}.jpg" alt="${capOf(x[2])}" loading="lazy"></div>`).join("")}${e.shots.length>4?`<button class="btn sm" data-xe="${EXP[lang].indexOf(e)}" data-xi="4">+${e.shots.length-4}</button>`:""}</div>`:""}${e.gh?`<div style="margin-top:14px"><a class="btn sm" href="${GH}${e.gh}" target="_blank" rel="noopener">${d.code}</a></div>`:""}</div>`).join(""); }
+function setView(v,quiet){
+  view=v; $("#constel").style.display = v==="map"?"block":"none"; $("#pgrid").style.display = v==="grid"?"grid":"none";
+  renderToolbar(); if(v==="map"&&!quiet) Map_.resize();
+}
+
+/* ---------- project sheet (same template for all) ---------- */
+let curId=null;
+function renderSheet(id){
+  const i=P.findIndex(p=>p.id===id); if(i<0) return; curId=id; const p=P[i], d=T[lang], g=GROUPS[p.grp];
+  const prev=P[(i+P.length-1)%P.length], next=P[(i+1)%P.length];
+  const shots = p.shots.length ? `<div><div class="stitle">${d.sh_shots}</div><div class="sgal">${p.shots.map((s,k)=>`<div class="shot ${s[1]===1?"r":""} ${s[1]===2?"pt":""}" data-lb="${k}"><img src="assets/${s[0]}.jpg" alt="${capOf(s[2])}" loading="lazy"><div class="cap">${capOf(s[2])}</div></div>`).join("")}</div></div>` : "";
+  $("#pm").innerHTML = `<div class="sheet" role="document">
+    <button class="sx" aria-label="Close">✕</button>
+    <div class="shead">${cover(p)}<div class="in">${statusPill(p)} <span class="chip" style="color:${g.c};border-color:${g.c}55;background:${g.c}18">${g[lang]}</span><h3>${p.t[lang]}</h3><p>${p.tag[lang]}</p></div></div>
+    <div class="sbody">
+      <div class="s3"><div><small>${d.sh_problem}</small><p>${p.problem[lang]}</p></div><div><small>${d.sh_solution}</small><p>${p.solution[lang]}</p></div><div><small>${d.sh_result}</small><p>${p.result[lang]}</p></div></div>
+      <div><div class="stitle">${d.sh_metrics}</div><div class="mt">${p.metrics.map(m=>`<div><b>${m[0]}</b><span>${m[1][lang]}</span></div>`).join("")}</div></div>
+      <div><div class="stitle">${d.sh_flow}</div><div class="flow">${p.flow.map((f,k)=>`<div data-n="${k+1}">${f[lang]}</div>`).join("")}</div></div>
+      <div><div class="stitle">${d.sh_tools}</div><div>${p.tools.map(t=>`<span class="chip">${t}</span>`).join("")}</div></div>
+      ${shots}
+      <div class="sfoot"><span class="who">${p.who[lang]}</span><div class="cta">${p.vid?`<a class="btn" href="${p.vid}" target="_blank" rel="noopener">${d.sh_video}</a>`:""}${(p.vids||[]).map(v=>`<a class="btn" href="${v[2]}" target="_blank" rel="noopener">${v[lang==="fr"?0:1]}</a>`).join("")}${p.gh?`<a class="btn fill" href="${GH}${p.gh}" target="_blank" rel="noopener">${d.sh_code}</a>`:""}</div></div>
+      ${p.note?`<p class="disc">${p.note[lang]}</p>`:""}
+      <div class="snav"><button data-go="${prev.id}"><small>← ${d.sh_prev}</small>${prev.t[lang]}</button><button data-go="${next.id}"><small>${d.sh_next} →</small>${next.t[lang]}</button></div>
+    </div></div>`;
+  $("#pm").scrollTop=0;
+}
+function openSheet(id){ renderSheet(id); $("#pm").classList.add("open"); document.body.style.overflow="hidden"; history.replaceState(null,"","#p="+id); }
+function closeSheet(){ $("#pm").classList.remove("open"); document.body.style.overflow=""; history.replaceState(null,"",location.pathname+location.search+"#projects"); }
+
+/* lightbox (screenshots inside a sheet) */
+let lbi=0; const LB=$("#lb");
+let expShots=null;
+const curShots=()=>expShots||P.find(p=>p.id===curId).shots;
+function showLB(){ const s=curShots()[lbi]; $("img",LB).src=`assets/${s[0]}.jpg`; $("p",LB).textContent=capOf(s[2]); }
+function openLB(i){ lbi=i; showLB(); LB.classList.add("open"); }
+$(".x",LB).onclick=()=>LB.classList.remove("open");
+$(".pv",LB).onclick=()=>{ lbi=(lbi+curShots().length-1)%curShots().length; showLB(); };
+$(".nx",LB).onclick=()=>{ lbi=(lbi+1)%curShots().length; showLB(); };
+LB.addEventListener("click",e=>{ if(e.target===LB) LB.classList.remove("open"); });
+
+/* ---------- events ---------- */
+document.addEventListener("click",e=>{
+  const l=e.target.closest(".lang button"); if(l){ lang=l.dataset.l; localStorage.setItem("lang",lang); renderStatic(); typeReset(); return; }
+  const t=e.target.closest(".tech"); if(t){ activeTech=t.dataset.t||null; renderToolbar(); renderGrid(); Map_.redraw(); return; }
+  const v=e.target.closest("#viewsw button"); if(v){ setView(v.dataset.v); return; }
+  const c=e.target.closest(".pcard"); if(c){ openSheet(c.dataset.id); return; }
+  const go=e.target.closest("[data-go]"); if(go){ renderSheet(go.dataset.go); history.replaceState(null,"","#p="+go.dataset.go); return; }
+  const xe=e.target.closest("[data-xe]"); if(xe){ expShots=EXP[lang][+xe.dataset.xe].shots; openLB(+xe.dataset.xi); return; }
+  const sh=e.target.closest(".shot[data-lb]"); if(sh){ expShots=null; openLB(+sh.dataset.lb); return; }
+  if(e.target.closest(".sx") || e.target===$("#pm")){ closeSheet(); return; }
+  if(e.target.closest("#links a")) $("#links").classList.remove("open");
+});
+$("#flagship").onclick=()=>openSheet("bcmid");
+$("#burger").onclick=()=>$("#links").classList.toggle("open");
+document.addEventListener("keydown",e=>{
+  if(LB.classList.contains("open")){ if(e.key==="Escape") LB.classList.remove("open"); if(e.key==="ArrowLeft") $(".pv",LB).click(); if(e.key==="ArrowRight") $(".nx",LB).click(); return; }
+  if($("#pm").classList.contains("open")){ if(e.key==="Escape") closeSheet(); if(e.key==="ArrowLeft"||e.key==="ArrowRight"){ const i=P.findIndex(p=>p.id===curId); const n=P[(i+(e.key==="ArrowRight"?1:P.length-1))%P.length]; renderSheet(n.id); history.replaceState(null,"","#p="+n.id);} }
+});
+
+/* nav state, reveal, counters */
+const nav=$("#nav"), secs=["projects","skills","experience","education"].map(id=>document.getElementById(id));
+addEventListener("scroll",()=>{ nav.classList.toggle("solid",scrollY>30); let on=""; secs.forEach(s=>{ if(s.getBoundingClientRect().top<innerHeight*.4) on=s.id; }); $$("#links a.l").forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+on)); },{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(x=>{ if(x.isIntersecting){ x.target.classList.add("in"); io.unobserve(x.target); if(x.target.classList.contains("stats")) counters(); }}),{threshold:.12});
+$$(".rv").forEach(el=>io.observe(el));
+function counters(){ $$("[data-count]").forEach(el=>{ const end=+el.dataset.count, suf=el.dataset.suffix||"", t0=performance.now(); const tick=t=>{ const p=Math.min((t-t0)/1400,1); el.textContent=Math.round(end*(1-Math.pow(1-p,3)))+suf; if(p<1) requestAnimationFrame(tick); }; requestAnimationFrame(tick); }); }
+
+/* typewriter */
+let ri=0,ci=0,del=false,timer; const roleEl=$("#role");
+function typeReset(){ clearTimeout(timer); ri=0; ci=0; del=false; roleEl.textContent=""; type(); }
+function type(){ const words=T[lang].roles, w=words[ri];
+  if(matchMedia("(prefers-reduced-motion:reduce)").matches){ roleEl.textContent=words[0]; return; }
+  roleEl.textContent=w.slice(0,ci);
+  if(!del&&ci<w.length){ ci++; timer=setTimeout(type,70); } else if(!del){ del=true; timer=setTimeout(type,1700); } else if(ci>0){ ci--; timer=setTimeout(type,34); } else { del=false; ri=(ri+1)%words.length; timer=setTimeout(type,300); } }
+
+/* hero network */
+(function(){
+  const c=$("#net"), x=c.getContext("2d"); let W,H,N=[],mx=-999,my=-999,run=true,dpr=1;
+  function size(){ const r=c.getBoundingClientRect(); dpr=Math.min(devicePixelRatio||1,2); W=c.width=r.width*dpr; H=c.height=r.height*dpr; const n=Math.round(Math.min(90,r.width*r.height/16000)); N=[]; for(let i=0;i<n;i++) N.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35*dpr,vy:(Math.random()-.5)*.35*dpr,r:(1.2+Math.random()*2.4)*dpr}); }
+  size(); addEventListener("resize",size);
+  c.parentElement.addEventListener("mousemove",e=>{ const r=c.getBoundingClientRect(); mx=(e.clientX-r.left)*dpr; my=(e.clientY-r.top)*dpr; });
+  c.parentElement.addEventListener("mouseleave",()=>{mx=my=-999});
+  new IntersectionObserver(es=>{ run=es[0].isIntersecting; if(run) draw(); }).observe(c);
+  const reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
+  function draw(){ if(!run) return; x.clearRect(0,0,W,H); const L=150*dpr;
+    for(const a of N){ if(!reduce){ a.x+=a.vx; a.y+=a.vy; if(a.x<0||a.x>W) a.vx*=-1; if(a.y<0||a.y>H) a.vy*=-1; } const dm=Math.hypot(a.x-mx,a.y-my); if(dm<200*dpr&&dm>1){ a.x+=(a.x-mx)/dm*1.1; a.y+=(a.y-my)/dm*1.1; } }
+    for(let i=0;i<N.length;i++){ const a=N[i];
+      for(let j=i+1;j<N.length;j++){ const b=N[j], d=Math.hypot(a.x-b.x,a.y-b.y); if(d<L){ x.strokeStyle=`rgba(46,196,182,${.22*(1-d/L)})`; x.lineWidth=dpr; x.beginPath(); x.moveTo(a.x,a.y); x.lineTo(b.x,b.y); x.stroke(); } }
+      const dm=Math.hypot(a.x-mx,a.y-my); if(dm<L*1.3){ x.strokeStyle=`rgba(127,227,216,${.5*(1-dm/(L*1.3))})`; x.beginPath(); x.moveTo(a.x,a.y); x.lineTo(mx,my); x.stroke(); }
+      x.fillStyle="rgba(46,196,182,.7)"; x.beginPath(); x.arc(a.x,a.y,a.r,0,7); x.fill(); }
+    if(!reduce) requestAnimationFrame(draw); }
+  draw();
+})();
+
+/* ===== constellation of projects ===== */
+const Map_=(function(){
+  const box=$("#constel"), cv=$("#cv"), ctx=cv.getContext("2d"), tip=$("#tip");
+  let W=0,H=0,dpr=1,nodes=[],links=[],hover=null,visible=false,raf=0;
+  const reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
+  const anchors={ai:[.3,.4],web:[.72,.3],bi:[.3,.82],emb:[.78,.78]};
+
+  function build(){
+    nodes=P.map((p,i)=>({p,i,x:0,y:0,vx:0,vy:0,r:p.star?15:10,ph:Math.random()*6.28}));
+    links=[];
+    for(let i=0;i<P.length;i++) for(let j=i+1;j<P.length;j++){
+      const shared=P[i].tech.filter(t=>P[j].tech.includes(t));
+      if(shared.length) links.push({a:i,b:j,w:shared.length,shared});
+    }
+  }
+  function layout(){
+    nodes.forEach(n=>{ const a=anchors[n.p.grp]; n.x=W*a[0]+(Math.random()-.5)*W*.22; n.y=H*a[1]+(Math.random()-.5)*H*.22; n.vx=n.vy=0; });
+    for(let it=0;it<420;it++){
+      const cool=1-it/420;
+      for(let i=0;i<nodes.length;i++) for(let j=i+1;j<nodes.length;j++){
+        const A=nodes[i],B=nodes[j]; let dx=(A.x-B.x)*.55,dy=A.y-B.y,d2=dx*dx+dy*dy+.01,d=Math.sqrt(d2);
+        const f=(26000/d2)*cool; dx/=d; dy/=d; A.vx+=dx*f*.55;A.vy+=dy*f;B.vx-=dx*f*.55;B.vy-=dy*f;
+      }
+      links.forEach(l=>{ const A=nodes[l.a],B=nodes[l.b]; let dx=B.x-A.x,dy=B.y-A.y,d=Math.hypot(dx,dy)||1; const target=190-Math.min(l.w,3)*15, f=(d-target)*.008*cool; dx/=d;dy/=d; A.vx+=dx*f;A.vy+=dy*f;B.vx-=dx*f;B.vy-=dy*f; });
+      nodes.forEach(n=>{ const a=anchors[n.p.grp]; n.vx+=(W*a[0]-n.x)*.006*cool; n.vy+=(H*a[1]-n.y)*.006*cool;
+        n.x+=n.vx; n.y+=n.vy; n.vx*=.82; n.vy*=.82;
+        const mX=Math.min(110,W*.1), mY=40; n.x=Math.max(mX,Math.min(W-mX,n.x)); n.y=Math.max(mY,Math.min(H-mY,n.y)); });
+    }
+  }
+  function resize(){
+    const r=box.getBoundingClientRect(); if(!r.width) return;
+    dpr=Math.min(devicePixelRatio||1,2); W=r.width; H=r.height; cv.width=W*dpr; cv.height=H*dpr;
+    if(!nodes.length) build(); layout(); if(visible) loop();
+  }
+  const pos=n=>[n.x+(reduce?0:Math.sin(performance.now()*.0006+n.ph)*5), n.y+(reduce?0:Math.cos(performance.now()*.0005+n.ph)*5)];
+  const lit=n=>activeTech ? n.p.tech.includes(activeTech) : true;
+  function related(h){ const s=new Set([h.i]); links.forEach(l=>{ if(l.a===h.i) s.add(l.b); if(l.b===h.i) s.add(l.a); }); return s; }
+
+  function draw(){
+    ctx.setTransform(dpr,0,0,dpr,0,0); ctx.clearRect(0,0,W,H);
+    const rel = hover? related(hover):null;
+    links.forEach(l=>{
+      const A=nodes[l.a],B=nodes[l.b]; const [ax,ay]=pos(A),[bx,by]=pos(B);
+      let alpha=.10+.07*l.w, col="46,196,182", wd=1;
+      if(activeTech){ if(l.shared.includes(activeTech)){ alpha=.7; wd=2; col="127,227,216"; } else alpha=.03; }
+      if(hover){ if(l.a===hover.i||l.b===hover.i){ alpha=.85; wd=2; col="127,227,216"; } else alpha=Math.min(alpha,.05); }
+      ctx.strokeStyle=`rgba(${col},${alpha})`; ctx.lineWidth=wd; ctx.beginPath(); ctx.moveTo(ax,ay); ctx.lineTo(bx,by); ctx.stroke();
+    });
+    nodes.forEach(n=>{
+      const [x,y]=pos(n), g=GROUPS[n.p.grp]; let a=1;
+      if(!lit(n)) a=.16; if(hover && !rel.has(n.i)) a=Math.min(a,.2);
+      const isH=hover&&hover.i===n.i, r=n.r+(isH?4:0);
+      ctx.globalAlpha=a;
+      const gr=ctx.createRadialGradient(x,y,0,x,y,r*3.4); gr.addColorStop(0,g.c+(isH?"88":"44")); gr.addColorStop(1,g.c+"00");
+      ctx.fillStyle=gr; ctx.beginPath(); ctx.arc(x,y,r*3.4,0,7); ctx.fill();
+      ctx.fillStyle=g.c; ctx.beginPath(); ctx.arc(x,y,r,0,7); ctx.fill();
+      if(n.p.star){ ctx.strokeStyle="#fff"; ctx.lineWidth=2; ctx.beginPath(); ctx.arc(x,y,r+5,0,7); ctx.stroke(); }
+      ctx.fillStyle="#06222a"; ctx.beginPath(); ctx.arc(x,y,r*.38,0,7); ctx.fill();
+      const label=n.p.sn, fs=isH||n.p.star?13:12; ctx.font=`700 ${fs}px Lato,"Segoe UI",sans-serif`;
+      const tw=ctx.measureText(label).width, right=x+r+10+tw<W-8, lx=right?x+r+9:x-r-9-tw, ly=y+4;
+      ctx.lineWidth=4; ctx.strokeStyle="rgba(9,14,26,.95)"; ctx.strokeText(label,lx,ly);
+      ctx.fillStyle=isH?"#fff":"#cfe0ee"; ctx.fillText(label,lx,ly);
+      ctx.globalAlpha=1;
+    });
+  }
+  function loop(){ cancelAnimationFrame(raf); const f=()=>{ if(!visible) return; draw(); if(!reduce) raf=requestAnimationFrame(f); }; f(); }
+
+  function pick(px,py){
+    let best=null,bd=1e9; nodes.forEach(n=>{ const [x,y]=pos(n), d=Math.hypot(px-x,py-y); if(d<n.r+14&&d<bd){ bd=d; best=n; } }); return best;
+  }
+  function showTip(n){
+    const d=T[lang]; const [x,y]=pos(n);
+    tip.innerHTML=`<b>${n.p.t[lang]}</b><p>${n.p.tag[lang]}</p><div>${n.p.tech.map(t=>`<span class="chip">${tl(t)}</span>`).join("")}</div><em>${d.open_tip} →</em>`;
+    tip.classList.add("show");
+    const tw=tip.offsetWidth, th=tip.offsetHeight; let tx=x+n.r+22, ty=y-th/2; if(tx+tw>W-8) tx=x-n.r-22-tw; ty=Math.max(8,Math.min(H-th-8,ty)); tip.style.left=tx+"px"; tip.style.top=ty+"px";
+  }
+  cv.addEventListener("mousemove",e=>{ const r=cv.getBoundingClientRect(); const n=pick(e.clientX-r.left,e.clientY-r.top); if(n!==hover){ hover=n; if(n){ showTip(n); cv.style.cursor="pointer"; } else { tip.classList.remove("show"); cv.style.cursor="default"; } loop(); } });
+  cv.addEventListener("mouseleave",()=>{ hover=null; tip.classList.remove("show"); loop(); });
+  cv.addEventListener("click",e=>{ const r=cv.getBoundingClientRect(); const n=pick(e.clientX-r.left,e.clientY-r.top); if(n) openSheet(n.p.id); });
+  new IntersectionObserver(es=>{ visible=es[0].isIntersecting; if(visible) loop(); }).observe(box);
+  addEventListener("resize",()=>{ if(view==="map") resize(); });
+  build();
+  return {resize:()=>resize(), redraw:()=>{ if(visible) loop(); }};
+})();
+
+/* init */
+renderStatic(); type();
+Map_.resize();
+(function(){ const m=location.hash.match(/^#p=([\w-]+)/); if(m && P.some(p=>p.id===m[1])) openSheet(m[1]); })();
+</script>
+</body>
+</html>
