@@ -71,13 +71,20 @@ h1{font-size:clamp(2.6rem,6.4vw,4.8rem);font-weight:900;line-height:1.02;letter-
 .bio{color:var(--mut);font-size:1.08rem;max-width:600px;margin-bottom:30px}
 .bio b{color:#fff;font-weight:700}
 .cta{display:flex;flex-wrap:wrap;gap:14px}
-.photo{position:relative;width:min(340px,80%);aspect-ratio:1;margin:0 auto}
-.photo::before{content:"";position:absolute;inset:-14px;border-radius:50%;background:conic-gradient(from 0deg,var(--accent),transparent 35%,var(--accent2) 60%,transparent 85%,var(--accent));animation:spin 9s linear infinite}
-.photo::after{content:"";position:absolute;inset:-4px;border-radius:50%;background:var(--bg)}
-.photo img{position:relative;z-index:2;width:100%;height:100%;object-fit:cover;border-radius:50%;border:4px solid var(--bg)}
-@keyframes spin{to{transform:rotate(360deg)}}
+.stage{position:relative;width:min(400px,88%);aspect-ratio:400/470;margin:0 auto;perspective:900px}
+.stage>.l{position:absolute;inset:0;will-change:transform;pointer-events:none}
+.ring{position:absolute;left:6%;width:88%;aspect-ratio:1;bottom:-.5%;border-radius:50%;background:conic-gradient(from 0deg,var(--accent),transparent 35%,var(--accent2) 60%,transparent 85%,var(--accent));animation:spin 9s linear infinite}
+.st-disc{position:absolute;left:10%;width:80%;aspect-ratio:1;bottom:3.83%;border-radius:50%;background:radial-gradient(circle at 50% 28%,#35d3c4 0%,#1a8f95 52%,#0e4455 100%);box-shadow:inset 0 0 0 5px var(--bg),0 30px 80px -20px rgba(46,196,182,.55)}
+.cut{position:absolute;left:6%;width:88%;bottom:0;aspect-ratio:600/737;
+  -webkit-mask:linear-gradient(#000,#000) 0 0/100% 59% no-repeat,radial-gradient(ellipse 45.45% 37.04% at 50% 58.8%,#000 99%,transparent 100%);
+  mask:linear-gradient(#000,#000) 0 0/100% 59% no-repeat,radial-gradient(ellipse 45.45% 37.04% at 50% 58.8%,#000 99%,transparent 100%)}
+.cut img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 10px 18px rgba(0,0,0,.35))}
+.hi{position:absolute;left:-4%;top:2%;min-width:150px;padding:10px 20px 11px;border-radius:22px 22px 22px 6px;background:rgba(255,255,255,.96);color:#0b1a30;text-align:center;box-shadow:0 14px 34px -12px #000;animation:bob 6s ease-in-out infinite;transform-origin:left bottom}
+.hi b{display:block;font-size:1.55rem;font-weight:900;line-height:1.15;transition:opacity .35s,transform .35s;color:#0f7f86}
+.hi b.out{opacity:0;transform:translateY(6px)}
+.hi small{display:block;font-size:.72rem;font-weight:700;color:#4a5d73;letter-spacing:.04em}
 .float{position:absolute;z-index:3;background:rgba(15,29,51,.92);border:1px solid rgba(46,196,182,.4);color:#fff;font-weight:700;font-size:.78rem;padding:7px 13px;border-radius:999px;backdrop-filter:blur(8px);animation:bob 5s ease-in-out infinite}
-.f1{top:6%;right:-6%}.f2{bottom:22%;left:-10%;animation-delay:-1.5s}.f3{bottom:2%;right:2%;animation-delay:-3s}
+.f1{top:22%;right:-4%}.f2{bottom:30%;left:-9%;animation-delay:-1.5s}.f3{bottom:3%;right:0;animation-delay:-3s}
 @keyframes bob{50%{transform:translateY(-10px)}}
 .scroll{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:1;color:var(--mut);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px}
 .scroll i{width:1.5px;height:34px;background:linear-gradient(var(--accent),transparent);animation:drop 1.8s infinite}
@@ -228,7 +235,7 @@ footer{padding:34px 0 46px;text-align:center;color:var(--mut);font-size:.88rem;b
 
 @media (max-width:900px){
   .hero-grid,.edu{grid-template-columns:1fr}
-  .photo{order:-1;width:min(240px,62%)}
+  .stage{order:-1;width:min(300px,76%)}.hi{left:-2%;min-width:120px}.hi b{font-size:1.2rem}
   .stats{grid-template-columns:repeat(2,1fr)}
   .links{position:fixed;inset:68px 0 auto 0;background:rgba(9,14,26,.97);flex-direction:column;padding:22px;gap:18px;border-bottom:1px solid var(--line);transform:translateY(-130%);transition:.3s;z-index:-1}
   .links.open{transform:none}
@@ -269,17 +276,17 @@ footer{padding:34px 0 46px;text-align:center;color:var(--mut);font-size:.88rem;b
       <p class="bio" data-i18n="bio"></p>
       <div class="cta">
         <a class="btn fill" href="#projects" data-i18n="cta1"></a>
-        <button class="btn" id="flagship" data-i18n="cta3"></button>
         <a class="btn" href="#contact" data-i18n="cta2"></a>
         <a class="btn" href="https://github.com/hamdikbell" target="_blank" rel="noopener">GitHub ↗</a>
         <a class="btn" href="https://www.linkedin.com/in/ikbel-hamdi-706427286" target="_blank" rel="noopener">LinkedIn ↗</a>
       </div>
     </div>
-    <div class="photo">
-      <img src="assets/profile.jpg" alt="Ikbel Hamdi" width="640" height="640">
-      <span class="float f1">Full-Stack</span>
-      <span class="float f2">AI &amp; GenAI Agents</span>
-      <span class="float f3">DevOps · MLOps</span>
+    <div class="stage" id="stage">
+      <div class="l" data-d="-6"><div class="ring"></div></div>
+      <div class="l" data-d="-12"><div class="st-disc"></div></div>
+      <div class="l" id="cutl" data-d="14"><div class="cut"><img src="assets/profile-cut.webp" alt="Ikbel Hamdi" width="600" height="737"></div></div>
+      <div class="l" data-d="30"><span class="float f1">Full-Stack</span><span class="float f2">AI &amp; GenAI Agents</span><span class="float f3">DevOps · MLOps</span></div>
+      <div class="l" data-d="38"><div class="hi" aria-hidden="true"><b id="hiw">أهلا</b><small data-i18n="hi_cap"></small></div></div>
     </div>
   </div>
   <div class="scroll"><span data-i18n="scroll"></span><i></i></div>
@@ -405,7 +412,7 @@ const TECHS = ["Deep Learning","Computer Vision","LLM & RAG","ML","Automation","
 const TECH_LABEL = {fr:{"Automation":"Automatisation","Embedded":"Embarqué","Optimization":"Optimisation"},en:{}};
 
 const P = [
-{id:"bcmid",grp:"ai",sn:"BCMID",star:true,st:"team",gh:"bcmid-multimodal-medical-ai",vid:"https://lnkd.in/p/efvg8DGs",
+{id:"bcmid",grp:"ai",sn:"BCMID",st:"team",gh:"bcmid-multimodal-medical-ai",vid:"https://lnkd.in/p/efvg8DGs",
  tech:["Deep Learning","Computer Vision","LLM & RAG","Automation","API"],
  t:{fr:"BCMID — Diagnostic du cancer du sein",en:"BCMID — Breast Cancer Diagnosis"},
  tag:{fr:"Aide au diagnostic du cancer du sein par IA multimodale et explicable.",en:"Multimodal, explainable AI for breast cancer diagnosis support."},
@@ -590,7 +597,7 @@ const P = [
 
 const T = {
 fr:{
- n_proj:"Projets", n_skills:"Compétences", n_exp:"Expérience", n_edu:"Formation", n_cv:"Télécharger mon CV",
+ hi_cap:"Je parle 4 langues", n_proj:"Projets", n_skills:"Compétences", n_exp:"Expérience", n_edu:"Formation", n_cv:"Télécharger mon CV",
  avail:"Disponible · stage PFE de 6 mois dès janvier 2027",
  bio:"Ingénieure en dernière année à <b>ESPRIT</b>, je conçois des solutions numériques complètes et intelligentes : <b>développement logiciel</b>, <b>data science &amp; IA</b>, <b>analyse de données &amp; BI</b>, <b>DevOps &amp; MLOps</b>. Je transforme des besoins métier en produits concrets, de la donnée à la mise en production.",
  cta1:"Explorer mes projets", cta2:"Me contacter", cta3:"★ Projet phare : BCMID", scroll:"Défiler",
@@ -612,7 +619,7 @@ fr:{
  roles:["Ingénieure Data Science & IA","Développeuse Full-Stack","Ingénieure IA générative & agents","Ingénieure DevOps / MLOps"]
 },
 en:{
- n_proj:"Projects", n_skills:"Skills", n_exp:"Experience", n_edu:"Education", n_cv:"Download my résumé",
+ hi_cap:"I speak 4 languages", n_proj:"Projects", n_skills:"Skills", n_exp:"Experience", n_edu:"Education", n_cv:"Download my résumé",
  avail:"Available · 6-month PFE internship from January 2027",
  bio:"Final-year engineering student at <b>ESPRIT</b>, I design complete and intelligent digital solutions: <b>software development</b>, <b>data science &amp; AI</b>, <b>data analysis &amp; BI</b>, <b>DevOps &amp; MLOps</b>. I turn business needs into concrete products, from data to production.",
  cta1:"Explore my projects", cta2:"Contact me", cta3:"★ Flagship: BCMID", scroll:"Scroll",
@@ -750,7 +757,6 @@ document.addEventListener("click",e=>{
   if(e.target.closest(".sx") || e.target===$("#pm")){ closeSheet(); return; }
   if(e.target.closest("#links a")) $("#links").classList.remove("open");
 });
-$("#flagship").onclick=()=>openSheet("bcmid");
 $("#burger").onclick=()=>$("#links").classList.toggle("open");
 document.addEventListener("keydown",e=>{
   if(LB.classList.contains("open")){ if(e.key==="Escape") LB.classList.remove("open"); if(e.key==="ArrowLeft") $(".pv",LB).click(); if(e.key==="ArrowRight") $(".nx",LB).click(); return; }
@@ -789,6 +795,28 @@ function type(){ const words=T[lang].roles, w=words[ri];
       x.fillStyle="rgba(46,196,182,.7)"; x.beginPath(); x.arc(a.x,a.y,a.r,0,7); x.fill(); }
     if(!reduce) requestAnimationFrame(draw); }
   draw();
+})();
+
+
+/* hero portrait follows the cursor + greeting in 4 languages */
+(function(){
+  const st=$("#stage"); if(!st) return; const ls=$$("#stage .l"); const cut=$("#cutl");
+  const reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
+  let tx=0,ty=0,x=0,y=0,t0=performance.now(),last=0,act=false;
+  const hero=$("#hero");
+  hero.addEventListener("mousemove",e=>{ const r=st.getBoundingClientRect(); tx=Math.max(-1,Math.min(1,(e.clientX-(r.left+r.width/2))/(innerWidth*.45))); ty=Math.max(-1,Math.min(1,(e.clientY-(r.top+r.height*.35))/(innerHeight*.45))); last=performance.now(); act=true; });
+  hero.addEventListener("mouseleave",()=>{ tx=0; ty=0; });
+  let vis=true; new IntersectionObserver(es=>{ vis=es[0].isIntersecting; if(vis) frame(); }).observe(hero);
+  function frame(){ if(!vis||reduce) return;
+    const now=performance.now();
+    if(!act||now-last>4000){ const t=(now-t0)/1000; tx=Math.sin(t*.6)*.35; ty=Math.cos(t*.5)*.18; }
+    x+=(tx-x)*.07; y+=(ty-y)*.07;
+    ls.forEach(l=>{ const d=+l.dataset.d||0; l.style.transform=`translate3d(${x*d}px,${y*d*.7}px,0)`; });
+    cut.style.transform=`translate3d(${x*14}px,${y*10}px,0) rotateY(${x*9}deg) rotateX(${-y*5}deg)`;
+    requestAnimationFrame(frame); }
+  frame();
+  const W=["أهلا","Bonjour","Hello","Merhaba"], el=$("#hiw"); let k=0;
+  setInterval(()=>{ el.classList.add("out"); setTimeout(()=>{ k=(k+1)%W.length; el.textContent=W[k]; el.setAttribute("lang",["ar","fr","en","tr"][k]); el.classList.remove("out"); },350); },2000);
 })();
 
 /* ===== constellation of projects ===== */
@@ -873,7 +901,7 @@ const Map_=(function(){
   new IntersectionObserver(es=>{ visible=es[0].isIntersecting; if(visible) loop(); }).observe(box);
   addEventListener("resize",()=>{ if(view==="map") resize(); });
   build();
-  return {resize:()=>resize(), redraw:()=>{ if(visible) loop(); }};
+  return {resize:()=>resize(), redraw:()=>{ if(visible) loop(); }, where:id=>{ const n=nodes.find(n=>n.p.id===id); const q=pos(n), r=cv.getBoundingClientRect(); return [r.left+q[0], r.top+q[1]]; }};
 })();
 
 /* init */
